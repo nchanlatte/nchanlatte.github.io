@@ -1,26 +1,20 @@
 @import 'shared/base';
 
-$github: #424242;
-$bitbucket: #0288d1;
-$codepen: #8BC34A;
-$linkedin: #ff5722;
-$google-plus: #ef5350;
-$email: #26a69a;
-
 $section-skew: -6deg;
 $section-offset: 5.2vh;
 $section-alt-bg: #607d8b;
 
+$profile-links: (
+	github: #424242,
+	bitbucket: #0288d1,
+	codepen: #8BC34A,
+	linkedin: #ff5722,
+	google-plus: #ef5350,
+	email: #26a69a
+);
+
 $profile-link-duration: 0.8s;
 $profile-link-timing: cubic-bezier(0.23, 1, 0.32, 1);
-
-@mixin profile-link-color($color) {
-	color: $color;
-
-	&:hover:after {
-		background-color: $color;
-	}
-}
 
 
 /*
@@ -186,26 +180,12 @@ main {
 	}
 }
 
-.github {
-	@include profile-link-color($github);
-}
+@each $name, $color in $profile-links {
+	.#{$name} {
+		color: $color;
 
-.bitbucket {
-	@include profile-link-color($bitbucket);
-}
-
-.codepen {
-	@include profile-link-color($codepen);
-}
-
-.linkedin {
-	@include profile-link-color($linkedin);
-}
-
-.google-plus {
-	@include profile-link-color($google-plus);
-}
-
-.email {
-	@include profile-link-color($email);
+		&:hover:after {
+			background-color: $color;
+		}
+	}
 }
