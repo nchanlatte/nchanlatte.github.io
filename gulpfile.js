@@ -10,7 +10,7 @@ const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
 gulp.task('clean', () => {
-  del.sync(['build', 'assets/css']);
+  del.sync(['build', 'static/css']);
 });
 
 gulp.task('css', () => (
@@ -20,16 +20,16 @@ gulp.task('css', () => (
     autoprefixer({ browsers: ['last 3 versions'] }),
     cssnano(),
   ]))
-  .pipe(gulp.dest('assets/css'))
+  .pipe(gulp.dest('static/css'))
 ));
 
 gulp.task('html', ['css'], () => (
-  gulp.src('pages/**')
+  gulp.src('pages/**/*.html')
     .pipe(nunjucksRender({
       path: ['templates'],
     }))
     .pipe(inline({
-      rootpath: 'assets'
+      rootpath: 'static'
     }))
     .pipe(gulp.dest('build'))
 ));
