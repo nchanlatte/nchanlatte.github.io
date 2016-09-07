@@ -14,11 +14,8 @@
     "del": "^2.2.2",
     "gulp": "^3.9.1",
     "gulp-inline-source": "^3.0.0",
-    "gulp-metalsmith": "^1.0.0",
+    "gulp-nunjucks-render": "^2.0.0",
     "gulp-postcss": "^6.1.1",
-    "gulp-sass": "^2.3.2",
-    "handlebars": "^4.0.5",
-    "metalsmith-in-place": "^1.4.4",
-    "metalsmith-layouts": "^1.6.5"
+    "gulp-sass": "^2.3.2"
   }
 }

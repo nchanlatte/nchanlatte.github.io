@@ -1,13 +1,12 @@
 const gulp = require('gulp');
 const del = require('del');
+// CSS
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-// Metalsmith
-const metalsmith = require('gulp-metalsmith');
-const layouts = require('metalsmith-layouts');
-const inplace = require('metalsmith-in-place');
+// HTML
+const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
 gulp.task('clean', () => {
@@ -25,19 +24,9 @@ gulp.task('css', () => (
 ));
 
 gulp.task('html', ['css'], () => (
-  gulp.src('src/**')
-    .pipe(metalsmith({
-      root: __dirname,
-      use: [
-        // layouts({
-        //   engine: 'handlebars',
-        //   partials: 'partials',
-        // }),
-        // inplace({
-        //   engine: 'handlebars',
-        //   partials: 'partials',
-        // }),
-      ],
+  gulp.src('pages/**')
+    .pipe(nunjucksRender({
+      path: ['templates'],
     }))
     .pipe(inline({
       rootpath: 'assets'
