@@ -10,33 +10,45 @@ const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
 gulp.task('clean', () => {
-  del.sync(['build', 'static/css']);
+  del.sync(['build']);
 });
+
+gulp.task('js', () => (
+  gulp.src('js/*.js')
+    .pipe(gulp.dest('build/js'))
+));
 
 gulp.task('css', () => (
   gulp.src('sass/*.scss')
-  .pipe(sass().on('error', sass.logError))
-  .pipe(postcss([
-    autoprefixer({ browsers: ['last 3 versions'] }),
-    cssnano(),
-  ]))
-  .pipe(gulp.dest('static/css'))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([
+      autoprefixer({ browsers: ['last 3 versions'] }),
+      cssnano(),
+    ]))
+    .pipe(gulp.dest('build/css'))
 ));
 
-gulp.task('html', ['css'], () => (
+gulp.task('copy-static', () => (
+  gulp.src('static/**').pipe(gulp.dest('build'))
+));
+
+gulp.task('html', ['js', 'css', 'copy-static'], () => (
   gulp.src('pages/**/*.html')
     .pipe(nunjucksRender({
       path: ['templates'],
     }))
     .pipe(inline({
-      rootpath: 'static'
+      rootpath: 'build'
     }))
     .pipe(gulp.dest('build'))
 ));
 
-gulp.task('default', ['clean', 'css', 'html']);
+
+gulp.task('default', ['clean', 'js', 'css', 'copy-static', 'html']);
 
 gulp.task('watch', ['default'], () => {
+  gulp.watch('js/**', ['js', 'html']);
   gulp.watch('sass/**', ['css', 'html']);
-  gulp.watch('src/**', ['html']);
-})
+  gulp.watch('static/**', ['copy-static', 'html']);
+  gulp.watch(['templates/**', 'pages/**'], ['html']);
+});
