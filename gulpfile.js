@@ -1,5 +1,17 @@
+// Common
 const gulp = require('gulp');
+const glob = require('glob');
 const del = require('del');
+const path = require('path');
+const merge = require('merge-stream');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+const sourcemaps = require('gulp-sourcemaps');
+// JS
+const rollup = require('rollup-stream');
+const babel = require('rollup-plugin-babel');
+const babelrc = require('babelrc-rollup');
+const uglify = require('gulp-uglify');
 // CSS
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
@@ -9,39 +21,50 @@ const cssnano = require('cssnano');
 const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
-gulp.task('clean', () => {
-  del.sync(['build']);
+gulp.task('clean', () => del.sync(['build']));
+
+gulp.task('js', () => {
+  return merge(glob.sync('js/*.js').map(entry => {
+    return rollup({
+      entry,
+      sourceMap: true,
+      format: 'cjs',
+      plugins: [
+        babel(babelrc.default()),
+      ],
+    })
+    .pipe(source(path.resolve(entry), path.resolve('js')))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(uglify({ preserveComments: 'license' }))
+    .pipe(sourcemaps.write('.'))
+  })).pipe(gulp.dest('build/js'));
 });
 
-gulp.task('js', () => (
-  gulp.src('js/*.js')
-    .pipe(gulp.dest('build/js'))
-));
-
-gulp.task('css', () => (
-  gulp.src('sass/*.scss')
+gulp.task('css', () => {
+  return gulp.src('sass/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
       autoprefixer({ browsers: ['last 3 versions'] }),
       cssnano(),
     ]))
-    .pipe(gulp.dest('build/css'))
-));
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('build/css'));
+});
 
-gulp.task('copy-static', () => (
-  gulp.src('static/**').pipe(gulp.dest('build'))
-));
+gulp.task('copy-static', () => gulp.src('static/**').pipe(gulp.dest('build')));
 
-gulp.task('html', ['js', 'css', 'copy-static'], () => (
-  gulp.src('pages/**/*.html')
+gulp.task('html', ['js', 'css', 'copy-static'], () => {
+  return gulp.src('pages/**/*.html')
     .pipe(nunjucksRender({
       path: ['templates'],
     }))
     .pipe(inline({
       rootpath: 'build'
     }))
-    .pipe(gulp.dest('build'))
-));
+    .pipe(gulp.dest('build'));
+});
 
 
 gulp.task('default', ['clean', 'js', 'css', 'copy-static', 'html']);
