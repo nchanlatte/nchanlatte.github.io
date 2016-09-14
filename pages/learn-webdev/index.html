@@ -1,0 +1,213 @@
+{% extends "layouts/default.html" %}
+{% set title = 'Learn Web Development' %}
+{% set googleFonts = 'Roboto:300,400|Roboto+Slab:300' %}
+
+{% block head %}
+<link rel="stylesheet" href="/css/learn-webdev.css">
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/learn-webdev.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Learn Web Development</h1>
+
+<section>
+    <h2>Basics</h2>
+
+    <h3>HTML &amp; CSS</h3>
+    <ul>
+        <li><a href="http://learn.shayhowe.com/">Learn to Code HTML &amp; CSS</a></li>
+        <li><a href="http://diveintohtml5.info/semantics.html">Dive Into HTML5 &mdash; Semantics</a></li>
+    </ul>
+
+    <h3>JavaScript</h3>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Mozilla Developer Network &mdash; JavaScript Guide</a></li>
+        <li><a href="http://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+    </ul>
+
+    <h3>Best Practices</h3>
+    <ul>
+        <li><a href="https://developers.google.com/web/fundamentals/?hl=en">Google &mdash; Web Fundamentals</a></li>
+    </ul>
+
+    <h3>Web Design Blogs</h3>
+    <ul>
+        <li><a href="https://css-tricks.com/">CSS-Tricks</a></li>
+        <li><a href="http://www.smashingmagazine.com/">Smashing Magazine</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Layout</h2>
+
+    <h3>General</h3>
+    <ul>
+        <li><a href="http://learnlayout.com/">Learn CSS Layout</a></li>
+    </ul>
+
+    <h3>Flexbox</h3>
+    <ul>
+        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks &mdash; A Complete Guide to Flexbox</a></li>
+        <li><a href="http://www.sketchingwithcss.com/samplechapter/cheatsheet.html">The Ultimate Flexbox Cheat Sheet</a></li>
+    </ul>
+
+    <h3>Grid Systems</h3>
+    <ul>
+        <li><a href="http://getbootstrap.com/css/#grid">Bootstrap</a></li>
+        <li><a href="http://www.responsivegridsystem.com/">Responsive Grid System</a></li>
+        <li><a href="https://css-tricks.com/dont-overthink-it-grids/">CSS Tricks &mdash; Don't Overthink It Grids</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Responsive Design</h2>
+
+    <h3>Media Queries</h3>
+    <ul>
+        <li><a href="https://css-tricks.com/css-media-queries/">CSS-Tricks &mdash; CSS Media Queries &amp; Using Available Space</a></li>
+    </ul>
+
+    <h3>Mobile-First</h3>
+    <ul>
+        <li><a href="http://www.zell-weekeat.com/how-to-write-mobile-first-css">How To Write Mobile-first CSS</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Animation</h2>
+
+    <h3>Using CSS for Animation</h3>
+    <ul>
+        <li><a href="https://cssanimation.rocks/transition-vs-animation/">Transitions vs. Animations</a></li>
+    </ul>
+
+    <h3>CSS Transitions</h3>
+    <ul>
+        <li><a href="https://css-tricks.com/almanac/properties/t/transition/">CSS-Tricks &mdash; Transitions</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions">Mozilla Developer Network &mdash; Using CSS Transitions</a></li>
+    </ul>
+
+    <h3>CSS Animations</h3>
+    <ul>
+        <li><a href="https://css-tricks.com/almanac/properties/a/animation/">CSS-Tricks &mdash; Animation</a></li>
+        <li><a href="https://robots.thoughtbot.com/css-animation-for-beginners">CSS Animation for Beginners</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_animations">Mozilla Developer Network &mdash; Using CSS Animations</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Design Inspiration</h2>
+
+    <h3>User Interface</h3>
+    <ul>
+        <li><a href="http://tympanus.net/codrops/">Codrops</a></li>
+        <li><a href="http://uimovement.com/">UI Movement</a></li>
+        <li><a href="http://www.awwwards.com/">Awwwards</a></li>
+        <li><a href="https://www.behance.net/search?field=132&content=projects">Behance &mdash; UI/UX</a></li>
+        <li><a href="https://www.behance.net/search?field=102&content=projects">Behance &mdash; Web Design</a></li>
+        <li><a href="https://dribbble.com/tags/ui">Dribbble &mdash; UI</a></li>
+    </ul>
+
+    <h3>Responsive Design</h3>
+    <ul>
+        <li><a href="http://mediaqueri.es/">Media Queries</a></li>
+    </ul>
+
+    <h3>Articles</h3>
+    <ul>
+        <li><a href="https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-1-559d4e805cda?hn=1">7 Rules for Creating Gorgeous UI</a></li>
+    </ul>
+
+    <h3>Style Guides</h3>
+    <ul>
+        <li><a href="https://www.google.com/design/spec/">Google</a></li>
+        <li><a href="https://dev.windows.com/en-us/design/">Microsoft</a></li>
+        <li><a href="http://brand.uber.com/">Uber</a></li>
+        <li><a href="http://ux.mailchimp.com/patterns/">MailChip</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Resources</h2>
+
+    <h3>Color Palettes</h3>
+    <ul>
+        <li><a href="http://www.google.com/design/spec/style/color.html">Google &mdash; Color</a></li>
+        <li><a href="https://coolors.co/app/">Coolors</a></li>
+    </ul>
+
+    <h3>Icon Sets</h3>
+    <ul>
+        <li><a href="http://fontawesome.io/">Font Awesome</a></li>
+        <li><a href="https://www.google.com/design/icons/">Google &mdash; Material Icons</a></li>
+        <li><a href="https://materialdesignicons.com/">Material Design Icons</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Reference Sites</h2>
+
+    <h3>General</h3>
+    <ul>
+        <li><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
+    </ul>
+
+    <h3>Browser Support</h3>
+    <ul>
+        <li><a href="http://caniuse.com/">Can I Use</a></li>
+    </ul>
+
+    <h3>JavaScript</h3>
+    <ul>
+        <li><a href="http://youmightnotneedjquery.com/">You Might Not Need jQuery</a></li>
+    </ul>
+
+    <h3>Fonts</h3>
+    <ul>
+        <li><a href="http://fontfamily.io/">FontFamily.io</a></li>
+        <li><a href="http://www.stateofwebtype.com/">The State of Web Type</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Tools</h2>
+
+    <h3>Image Compression</h3>
+    <ul>
+        <li><a href="http://compressjpeg.com/">Compress JPEG</a></li>
+        <li><a href="http://compresspng.com/">Compress PNG</a></li>
+        <li><a href="https://kraken.io/web-interface">Kraken.io</a></li>
+    </ul>
+
+    <h3>Code Minification</h3>
+    <ul>
+        <li><a href="http://refresh-sf.com/">Online JS/CSS/HTML Compressor</a></li>
+    </ul>
+
+    <h3>CSS Vendor Prefixes</h3>
+    <ul>
+        <li><a href="http://pleeease.io/play/">Pleeease Play</a></li>
+    </ul>
+
+    <h3>Placeholder Content</h3>
+    <ul>
+        <li><a href="http://chrisvalleskey.com/fillerama/">Fillerama</a></li>
+        <li><a href="https://placehold.it/">Placehold.it</a></li>
+        <li><a href="http://lorempixel.com/">lorempixel</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Code Style</h2>
+
+    <h3>Style Guides</h3>
+    <ul>
+        <li><a href="http://codeguide.co/">Code Guide by @mdo</a></li>
+        <li><a href="https://google.github.io/styleguide/htmlcssguide.xml">Google &mdash; HTML/CSS Style Guide</a></li>
+        <li><a href="https://google.github.io/styleguide/javascriptguide.xml">Google &mdash; JavaScript Style Guide</a></li>
+    </ul>
+</section>
+{% endblock %}
