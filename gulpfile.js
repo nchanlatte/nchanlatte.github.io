@@ -21,7 +21,7 @@ const cssnano = require('cssnano');
 const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
-gulp.task('clean', () => del.sync(['build']));
+gulp.task('clean', () => del.sync(['build/**', '!build']));
 
 gulp.task('js', () => {
   return merge(glob.sync('js/*.js').map(entry => {
