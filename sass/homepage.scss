@@ -31,12 +31,12 @@ section,
 footer {
 	padding: 25px;
 	display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 section {
@@ -91,7 +91,7 @@ h1 {
 
 h2 {
 	font-weight: 300;
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 main {
@@ -104,7 +104,7 @@ main {
 		margin: 5px 0;
 
 		color: #607d8b;
-    	font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
 		font-weight: 300;
 		letter-spacing: 2px;
 		text-transform: uppercase;
@@ -122,10 +122,10 @@ main {
 */
 
 .profile-links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 25px;
 
 	a {
 		width: 128px;
@@ -140,9 +140,11 @@ main {
 		border-radius: 50%;
 		font: 15px 'Roboto', sans-serif;
 		text-decoration: none;
-		transition-property: color, fill;
-		transition-duration: $profile-link-duration;
-		transition-timing-function: $profile-link-timing;
+
+		&,
+		&:after {
+			transition: all $profile-link-duration $profile-link-timing;
+		}
 
 		&:after {
 			content: '';
@@ -155,9 +157,6 @@ main {
 
 			border-radius: 50%;
 			transform: scale3d(1.15, 1.15, 1);
-			transition-property: background-color, transform;
-			transition-duration: $profile-link-duration;
-			transition-timing-function: $profile-link-timing;
 		}
 		
 		&:hover {
@@ -188,6 +187,10 @@ main {
 			font-size: 17px;
 		}
 	}
+}
+
+.profile-links--row {
+  
 }
 
 @each $name, $color in $profile-links {
