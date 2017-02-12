@@ -21,7 +21,9 @@ const cssnano = require('cssnano');
 const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
-gulp.task('clean', () => del.sync(['build/**', '!build']));
+const BUILD = 'public';
+
+gulp.task('clean', () => del.sync([`${BUILD}/**`, `!${BUILD}`]));
 
 gulp.task('js', () => {
   return merge(glob.sync('js/*.js').map(entry => {
@@ -38,7 +40,7 @@ gulp.task('js', () => {
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(uglify({ preserveComments: 'license' }))
     .pipe(sourcemaps.write('.'))
-  })).pipe(gulp.dest('build/js'));
+  })).pipe(gulp.dest(`${BUILD}/js`));
 });
 
 gulp.task('css', () => {
@@ -50,10 +52,10 @@ gulp.task('css', () => {
       cssnano(),
     ]))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build/css'));
+    .pipe(gulp.dest(`${BUILD}/css`));
 });
 
-gulp.task('copy-static', () => gulp.src('static/**').pipe(gulp.dest('build')));
+gulp.task('copy-static', () => gulp.src('static/**').pipe(gulp.dest(BUILD)));
 
 gulp.task('html', ['js', 'css', 'copy-static'], () => {
   return gulp.src('pages/**/*.html')
@@ -61,9 +63,9 @@ gulp.task('html', ['js', 'css', 'copy-static'], () => {
       path: ['templates'],
     }))
     .pipe(inline({
-      rootpath: 'build'
+      rootpath: BUILD
     }))
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest(BUILD));
 });
 
 
