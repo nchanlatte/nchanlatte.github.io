@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "live-server build"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -24,11 +24,13 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-uglify": "^2.0.0",
-    "live-server": "^1.2.0",
     "merge-stream": "^1.0.0",
     "rollup-plugin-babel": "^2.6.1",
     "rollup-stream": "^1.13.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "express": "^4.14.1"
   }
 }
