@@ -31,12 +31,12 @@ gulp.task('css', () => {
 gulp.task('copy-static', () => gulp.src('static/**').pipe(gulp.dest(BUILD)));
 
 gulp.task('html', () => {
-  return gulp.src('pages/**/*.html')
+  return gulp.src('pages/**/*.njk')
     .pipe(nunjucksRender({
       path: ['templates'],
     }))
     .pipe(inline({
-      rootpath: BUILD
+      rootpath: BUILD,
     }))
     .pipe(gulp.dest(BUILD));
 });
