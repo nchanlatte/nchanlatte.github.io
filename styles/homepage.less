@@ -1,32 +1,27 @@
 @import "shared/base";
 
-$section-skew: -6deg;
-$section-offset: 5.2vh;
-$section-alt-bg: #607d8b;
+@section-skew: -6deg;
+@section-offset: 5.2vh;
+@section-alt-bg: #607d8b;
 
-$profile-links: (github: #424242, bitbucket: #0288d1, codepen: #8bc34a, linkedin: #ff5722, google-plus: #ef5350, email: #26a69a);
-$profile-link-duration: 0.8s;
-$profile-link-timing: cubic-bezier(0.23, 1, 0.32, 1);
+@profile-link-duration: 0.8s;
+@profile-link-timing: cubic-bezier(0.23, 1, 0.32, 1);
 
 /*
 ** Layout
 */
 
 main,
-section {
-  min-height: 100vh;
-}
-
-main,
 section,
 footer {
-  display: flex;
   padding: 25px;
-  align-items: center;
-  justify-content: center;
 }
 
 main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   flex-direction: column;
 }
 
@@ -39,14 +34,14 @@ section {
 
     &::before {
       position: absolute;
-      top: $section-offset * -1;
+      top: @section-offset * -1;
       right: 0;
-      bottom: $section-offset * -1;
+      bottom: @section-offset * -1;
       left: 0;
       z-index: -1;
       content: "";
-      background-color: $section-alt-bg;
-      transform: skewY($section-skew);
+      background-color: @section-alt-bg;
+      transform: skewY(@section-skew);
     }
 
     &:first-of-type {
@@ -59,12 +54,12 @@ section {
   }
 
   &:nth-of-type(even) {
-    margin: ($section-offset * 2) 0;
+    margin: (@section-offset * 2) 0;
   }
 }
 
 footer {
-  padding-top: ($section-offset * 2);
+  padding-top: (@section-offset * 2);
   color: #fff;
   background-color: #424242;
 }
@@ -129,7 +124,7 @@ main {
 
     &,
     &::after {
-      transition: all $profile-link-duration $profile-link-timing;
+      transition: all @profile-link-duration @profile-link-timing;
     }
 
     &::after {
@@ -174,12 +169,18 @@ main {
   }
 }
 
-@each $name, $color in $profile-links {
-  .#{$name} {
-    color: $color;
+.profile-link(@name, @color) {
+  .@{name} {
+    color: @color;
 
     &:hover::after {
-      background-color: $color;
+      background-color: @color;
     }
   }
 }
+
+.profile-link(github, #424242);
+.profile-link(bitbucket, #0288d1);
+.profile-link(codepen, #8bc34a);
+.profile-link(linkedin, #ff5722);
+.profile-link(email, #26a69a);

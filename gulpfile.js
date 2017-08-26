@@ -3,11 +3,12 @@ const gulp = require('gulp');
 const runSequence = require('run-sequence');
 const del = require('del');
 const sourcemaps = require('gulp-sourcemaps');
+const rename = require('gulp-rename');
 // CSS
-const sass = require('gulp-sass');
+const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
+const csswring = require('csswring');
 // HTML
 const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
@@ -17,13 +18,19 @@ const BUILD = 'public';
 gulp.task('clean', () => del.sync([`${BUILD}/**`, `!${BUILD}`]));
 
 gulp.task('css', () => {
-  return gulp.src('sass/*.scss')
+  return gulp.src('styles/*.less')
     .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
+    .pipe(less())
     .pipe(postcss([
-      autoprefixer({ browsers: ['last 3 versions'] }),
-      cssnano(),
+      autoprefixer(),
     ]))
+    .pipe(gulp.dest(`${BUILD}/css`))
+    .pipe(postcss([
+      csswring({
+        removeAllComments: true,
+      }),
+    ]))
+    .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(`${BUILD}/css`));
 });
@@ -45,7 +52,7 @@ gulp.task('html', () => {
 gulp.task('default', cb => runSequence('clean', ['css', 'copy-static'], 'html', cb));
 
 gulp.task('watch', ['default'], () => {
-  gulp.watch('sass/**', () => runSequence('css', 'html'));
+  gulp.watch('styles/**', () => runSequence('css', 'html'));
   gulp.watch('static/**', () => runSequence('copy-static', 'html'));
   gulp.watch(['templates/**', 'pages/**'], ['html']);
 });
