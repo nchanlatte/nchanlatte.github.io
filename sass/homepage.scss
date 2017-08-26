@@ -1,21 +1,12 @@
-@import 'shared/base';
+@import "shared/base";
 
 $section-skew: -6deg;
 $section-offset: 5.2vh;
 $section-alt-bg: #607d8b;
 
-$profile-links: (
-	github: #424242,
-	bitbucket: #0288d1,
-	codepen: #8BC34A,
-	linkedin: #ff5722,
-	google-plus: #ef5350,
-	email: #26a69a
-);
-
+$profile-links: (github: #424242, bitbucket: #0288d1, codepen: #8bc34a, linkedin: #ff5722, google-plus: #ef5350, email: #26a69a);
 $profile-link-duration: 0.8s;
 $profile-link-timing: cubic-bezier(0.23, 1, 0.32, 1);
-
 
 /*
 ** Layout
@@ -23,14 +14,14 @@ $profile-link-timing: cubic-bezier(0.23, 1, 0.32, 1);
 
 main,
 section {
-	min-height: 100vh;
+  min-height: 100vh;
 }
 
 main,
 section,
 footer {
-	padding: 25px;
-	display: flex;
+  display: flex;
+  padding: 25px;
   align-items: center;
   justify-content: center;
 }
@@ -40,82 +31,78 @@ main {
 }
 
 section {
-	position: relative;
+  position: relative;
 
-	&:nth-of-type(odd) {
-		z-index: 1;
-		color: #fff;
+  &:nth-of-type(odd) {
+    z-index: 1;
+    color: #fff;
 
-		&:before {
-			content: '';
-			position: absolute;
-			z-index: -1;
-			top: $section-offset * -1;
-			right: 0;
-			bottom: $section-offset * -1;
-			left: 0;
-			background-color: $section-alt-bg;
-			transform: skewY($section-skew);
-		}
+    &::before {
+      position: absolute;
+      top: $section-offset * -1;
+      right: 0;
+      bottom: $section-offset * -1;
+      left: 0;
+      z-index: -1;
+      content: "";
+      background-color: $section-alt-bg;
+      transform: skewY($section-skew);
+    }
 
-		&:first-of-type {
-			margin-top: 0;
-		}
+    &:first-of-type {
+      margin-top: 0;
+    }
 
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 
-	&:nth-of-type(even) {
-		margin: ($section-offset * 2) 0;
-	}
+  &:nth-of-type(even) {
+    margin: ($section-offset * 2) 0;
+  }
 }
 
 footer {
-	padding-top: ($section-offset * 2);
-
-	background-color: #424242;
-	color: #fff;
+  padding-top: ($section-offset * 2);
+  color: #fff;
+  background-color: #424242;
 }
-
 
 /*
 ** Type
 */
 
 h1 {
-	font-weight: 100;
-	font-size: 3em;
+  font-size: 3em;
+  font-weight: 100;
 }
 
 h2 {
-	font-weight: 300;
   font-size: 1.5em;
+  font-weight: 300;
 }
 
 main {
-	h1,
-	h2 {
-		text-align: center;
-	}
+  h1,
+  h2 {
+    text-align: center;
+  }
 
-	h1 {
-		margin: 5px 0;
+  h1 {
+    margin: 5px 0;
+    font-family: Raleway, Roboto, Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    color: #607d8b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+  }
 
-		color: #607d8b;
-    font-family: Raleway, Arial, Helvetica, sans-serif;
-		font-weight: 300;
-		letter-spacing: 2px;
-		text-transform: uppercase;
-		word-spacing: 2px;
-	}
-
-	h2 {
-		color: #455a64;
-	}
+  h2 {
+    color: #455a64;
+  }
 }
-
 
 /*
 ** Profile Links
@@ -127,78 +114,72 @@ main {
   justify-content: center;
   margin-top: 25px;
 
-	a {
-		width: 128px;
-		height: 128px;
-		position: relative;
-		margin: 10px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+  a {
+    position: relative;
+    display: flex;
+    width: 128px;
+    height: 128px;
+    margin: 10px;
+    font: 15px Roboto, sans-serif;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
 
-		border-radius: 50%;
-		font: 15px 'Roboto', sans-serif;
-		text-decoration: none;
+    &,
+    &::after {
+      transition: all $profile-link-duration $profile-link-timing;
+    }
 
-		&,
-		&:after {
-			transition: all $profile-link-duration $profile-link-timing;
-		}
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      content: "";
+      border-radius: 50%;
+      transform: scale3d(1.15, 1.15, 1);
+    }
 
-		&:after {
-			content: '';
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			z-index: -1;
+    &:hover {
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 
-			border-radius: 50%;
-			transform: scale3d(1.15, 1.15, 1);
-		}
-		
-		&:hover {
-			color: #fff;
-			text-shadow: 0 1px 4px rgba(0,0,0,.15);
+      &::after {
+        transform: scale3d(1, 1, 1);
+      }
 
-			&:after {
-				transform: scale3d(1,1,1);
-			}
+      svg {
+        filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
+      }
+    }
 
-			svg {
-				filter: drop-shadow(0 1px 4px rgba(0,0,0,.15));
-			}
-		}
-		
-		svg {
-			width: 48px;
-			height: 48px;
-			margin-bottom: 5px;
-			fill: currentColor;
-		}
-	}
+    svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 5px;
+      fill: currentColor;
+    }
+  }
 
-	@media (min-width: 550px) {
-		margin-top: 50px;
+  @media (min-width: 550px) {
+    margin-top: 50px;
 
-		a {
-			font-size: 17px;
-		}
-	}
-}
-
-.profile-links--row {
-  
+    a {
+      font-size: 17px;
+    }
+  }
 }
 
 @each $name, $color in $profile-links {
-	.#{$name} {
-		color: $color;
+  .#{$name} {
+    color: $color;
 
-		&:hover:after {
-			background-color: $color;
-		}
-	}
+    &:hover::after {
+      background-color: $color;
+    }
+  }
 }
