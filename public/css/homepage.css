@@ -461,10 +461,14 @@ html {
   font-display: swap;
 }
 ::-moz-selection {
-  background: rgba(50, 50, 50, 0.3);
+  color: #fff;
+  background-color: #222;
+  text-shadow: none;
 }
 ::selection {
-  background: rgba(50, 50, 50, 0.3);
+  color: #fff;
+  background-color: #222;
+  text-shadow: none;
 }
 /*
 ** Layout
