@@ -45,7 +45,7 @@ gulp.task('html', () => {
 gulp.task('default', cb => runSequence('clean', ['css', 'copy-static'], 'html', cb));
 
 gulp.task('watch', ['default'], () => {
-  gulp.watch('sass/**', cb => runSequence('css', 'html', cb));
-  gulp.watch('static/**', runSequence('copy-static', 'html', cb));
+  gulp.watch('sass/**', () => runSequence('css', 'html'));
+  gulp.watch('static/**', () => runSequence('copy-static', 'html'));
   gulp.watch(['templates/**', 'pages/**'], ['html']);
 });
