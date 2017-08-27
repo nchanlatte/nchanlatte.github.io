@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Source for my personal site",
   "scripts": {
-    "test": "live-server public --watch=public"
+    "test": "live-server public"
   },
   "author": "",
   "license": "ISC",
