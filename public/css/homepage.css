@@ -465,12 +465,12 @@ body {
 }
 ::-moz-selection {
   color: #fff;
-  background-color: #222;
+  background-color: #0a5276;
   text-shadow: none;
 }
 ::selection {
   color: #fff;
-  background-color: #222;
+  background-color: #0a5276;
   text-shadow: none;
 }
 /*
@@ -550,13 +550,13 @@ main h1 {
   margin: 5px 0;
   font-family: Raleway, Roboto, Arial, Helvetica, sans-serif;
   font-weight: 300;
-  color: #607d8b;
+  color: #0f7cb3;
   text-transform: uppercase;
   letter-spacing: 2px;
   word-spacing: 2px;
 }
 main h2 {
-  color: #455a64;
+  color: #3d525c;
 }
 /*
 ** Profile Links

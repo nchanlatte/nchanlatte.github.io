@@ -1,13 +1,7 @@
+@import "shared/definitions";
 @import "shared/base";
 
-@primary-color:     hsl(200, 85%, 38%);
-@text-color:        desaturate(@primary-color, 70);
-@heading-color:     darken(@text-color, 10);
-@subtext-color:     lighten(@text-color, 5);
-@subtext-color:     @text-color;
-
 body {
-  background-color: #f1f1f1;
   color: @text-color;
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
@@ -112,7 +106,7 @@ section {
 }
 
 section + section {
-  border-top: 1px solid hsl(210, 5%, 80%);
+  border-top: 1px solid hsl(200, 5%, 80%);
 }
 
 .entries {
@@ -147,12 +141,12 @@ section + section {
 
 .time-period {
   margin-bottom: 0.5em;
-  color: hsl(210, 10%, 35%);
+  color: @text-color;
   font-size: 0.875rem;
 }
 
 .description {
-  color: @subtext-color;
+  color: @text-color;
   line-height: 1.5;
 }
 
@@ -163,8 +157,8 @@ section + section {
 @media screen {
   .page-header {
     background-color: @primary-color;
-    color: hsl(0, 100%, 100%);
 
+    &,
     h1,
     a {
       color: #fff;
@@ -243,7 +237,7 @@ section + section {
   }
 
   .page-header {
-    border-bottom: 1px solid hsl(210, 5%, 80%);
+    border-bottom: 1px solid hsl(200, 5%, 80%);
   }
 
   section {
