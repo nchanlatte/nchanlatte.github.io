@@ -20,14 +20,8 @@
       <h1 class="section-heading">About</h1>
     </header>
 
-    <div class="entries">
-      <div class="entry">
-        <div class="side-col">
-        </div>
-        <div class="main-col">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.</p>
-        </div>
-      </div>
+    <div class="section-content">
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.</p>
     </div>
   </section> #}
 
@@ -36,15 +30,15 @@
       <h1 class="section-heading">Experience</h1>
     </header>
 
-    <div class="entries">
-      <div class="entry">
+    <div class="section-content">
+      <div class="entry row">
         <div class="side-col">
           <p class="time-period">May 2015&ndash;Present</p>
         </div>
         <div class="main-col">
-          <h2 class="entry-title">UX Developer</h2>
-          <h3 class="entry-subtitle">Gallup</h3>
-          <ul class="description">
+          <h2>UX Developer</h2>
+          <h3>Gallup</h3>
+          <ul>
             <li>Contributed to a library of reusable web components used by various web applications and marketing sites.</li>
             <li>Developed an SVG-based graphing library; used it to build an interactive data visualization for exploring historical presidential approval ratings.</li>
             <li>Optimized front end site performance through compression, bundling, prioritization, and refactoring.</li>
@@ -53,42 +47,45 @@
         </div>
       </div>
 
-      <div class="entry">
+      <div class="entry row">
         <div class="side-col">
           <p class="time-period">Feb 2015&ndash;May 2015</p>
         </div>
         <div class="main-col">
-          <h2 class="entry-title">UX Developer Intern</h2>
-          <h3 class="entry-subtitle">Gallup</h3>
-          <ul class="description">
+          <h2>UX Developer Intern</h2>
+          <h3>Gallup</h3>
+          <ul>
             <li>Conducted remote and in-person usability studies and reported findings and recommendations to stakeholders.</li>
             <li>Resolved browser inconsistencies and bugs across multiple websites.</li>
           </ul>
         </div>
       </div>
 
-      <div class="entry">
+      <div class="entry row">
         <div class="side-col">
           <p class="time-period">Nov 2012&ndash;Feb 2015</p>
         </div>
         <div class="main-col">
-          <h2 class="entry-title">Web Developer</h2>
-          <h3 class="entry-subtitle">Optimum Data</h3>
-          <ul class="description">
+          <h2>Web Developer</h2>
+          <h3>Optimum Data</h3>
+          <ul>
             <li>Designed, developed, and maintained an intuitive inventory management web application that interfaces with legacy ERP software.</li>
             <li>Improved company workflows through automation and integrations with other software.</li>
           </ul>
         </div>
       </div>
 
-      <div class="entry hidden">
+      <div class="entry row hidden">
         <div class="side-col">
           <p class="time-period">Aug 2008&ndash;Nov 2012</p>
         </div>
         <div class="main-col">
-          <h2 class="entry-title">Order Picker</h2>
-          <h3 class="entry-subtitle">Optimum Data</h3>
-          <p class="description">Configured networking equipment to meet customer specifications. Assembled and installed order materials, often working with strict shipping deadlines.</p>
+          <h2>Order Picker</h2>
+          <h3>Optimum Data</h3>
+          <ul>
+            <li>Configured networking equipment to meet customer specifications.</li>
+            <li>Assembled and installed order materials, often working with strict shipping deadlines.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -99,14 +96,14 @@
       <h1 class="section-heading">Education</h1>
     </header>
 
-    <div class="entries">
-      <div class="entry">
+    <div class="section-content">
+      <div class="entry row">
         <div class="side-col">
           <p class="time-period">May 2015</p>
         </div>
         <div class="main-col">
-          <h2 class="entry-title">Bachelor of Science in Business Administration</h2>
-          <h3 class="entry-subtitle">Creighton University</h3>
+          <h2>Bachelor of Science in Business Administration</h2>
+          <h3>Creighton University</h3>
           <p>Business Intelligence &amp; Analytics (3.75 GPA)</p>
         </div>
       </div>
@@ -118,58 +115,46 @@
       <h1 class="section-heading">Skills</h1>
     </header>
 
-    <div class="entries">
-      <div class="entry">
-        <div class="columns">
-        <div class="list">
-          <h2 class="entry-title">Programming Languages</h2>
-          <ul>
-            <li>HTML &amp; CSS/Sass/LESS</li>
-            <li>JavaScript</li>
-            <li>C#</li>
-            <li>PHP</li>
-            <li>Java</li>
-            <li>SQL</li>
-          </ul>
-        </div>
-        <div class="list">
-          <h2 class="entry-title">Development Tools</h2>
-          <ul>
-            <li>Git</li>
-            <li>Node.js</li>
-            <li>Gulp</li>
-          </ul>
-        </div>
-        <div class="list">
-          <h2 class="entry-title">Software Patterns</h2>
-          <ul>
-            <li>Model-View-Controller</li>
-            <li>REST</li>
-            <li>Responsive web design</li>
-            <li>Mobile-first design</li>
-          </ul>
-        </div>
-        <div class="list">
-          <h2 class="entry-title">Frameworks</h2>
-          <ul>
-            <li>AngularJS</li>
-            <li>CodeIgniter</li>
-          </ul>
-        </div>
-        </div>
+    <div class="section-content grid">
+      <div class="grid-item grid-item--2">
+        <h2 class="entry-title">Programming Languages</h2>
+        <ul>
+          <li>HTML &amp; CSS/Sass/LESS</li>
+          <li>JavaScript</li>
+          <li>C#</li>
+          <li>PHP</li>
+          <li>Java</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+
+      <div class="grid-item grid-item--2">
+        <h2 class="entry-title">Development Tools</h2>
+        <ul>
+          <li>Git</li>
+          <li>Node.js</li>
+          <li>Gulp</li>
+        </ul>
+      </div>
+
+      <div class="grid-item grid-item--2">
+        <h2 class="entry-title">Software Patterns</h2>
+        <ul>
+          <li>Model-View-Controller</li>
+          <li>REST</li>
+          <li>Responsive web design</li>
+          <li>Mobile-first design</li>
+        </ul>
+      </div>
+
+      <div class="grid-item grid-item--2">
+        <h2 class="entry-title">Frameworks</h2>
+        <ul>
+          <li>AngularJS</li>
+          <li>CodeIgniter</li>
+        </ul>
       </div>
     </div>
   </section>
-
-  {# <section>
-    <header>
-      <h1 class="section-heading">Interests</h1>
-    </header>
-
-    <div class="entries">
-      <div class="entry">
-      </div>
-    </div>
-  </section> #}
 </main>
 {% endblock %}
