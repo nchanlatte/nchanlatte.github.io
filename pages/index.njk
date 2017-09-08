@@ -3,43 +3,63 @@
 
 {% block head %}
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:300&text=MATT%20TURCO">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500">
 <link rel="stylesheet" href="css/homepage.min.css" inline>
 {% endblock %}
 
 {% block content %}
 <main>
-  <h1>Matt Turco</h1>
+  <h1 class="page-heading">Matt Turco</h1>
   <h2>a web developer &amp; design enthusiast</h2>
   
-  <div class="profile-links">
-    <a href="https://github.com/mturco?tab=repositories" class="github">
-      <img inline src="svg/github.svg">
-      <span>GitHub</span>
-    </a>
+  <section class="profile-links">
+    <div class="profile-links-group">
+      <h1><span>Code</span></h1>
+      <ul>
+        <li>
+          <a href="https://github.com/mturco?tab=repositories" class="github">
+            <img inline src="svg/github.svg">
+            <span>GitHub</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://bitbucket.org/mturco" class="bitbucket">
+            <img inline src="svg/bitbucket.svg">
+            <span>Bitbucket</span>
+          </a>
+        </li>
+      </ul>
+    </div>
 
-    <a href="https://bitbucket.org/mturco" class="bitbucket">
-      <img inline src="svg/bitbucket.svg">
-      <span>Bitbucket</span>
-    </a>
-
-    <a href="http://codepen.io/mturco/" class="codepen">
-      <img inline src="svg/codepen.svg">
-      <span>CodePen</span>
-    </a>
-
-    <a href="http://www.linkedin.com/in/mattturco" class="linkedin">
-      <img inline src="svg/linkedin.svg">
-      <span>LinkedIn</span>
-    </a>
-
-    <a href="mailto:matt.turco@gmail.com" class="email">
-      <img inline src="svg/email.svg">
-      <span>Email</span>
-    </a>
-  </div>
+    <div class="profile-links-group">
+      <h1><span>Contact</span></h1>
+      <ul>
+        <li>
+          <a href="resume.html" class="resume">
+            <img inline src="svg/resume.svg">
+            <span>Resume</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.linkedin.com/in/mattturco" class="linkedin">
+            <img inline src="svg/linkedin.svg">
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:matt.turco@gmail.com" class="email">
+            <img inline src="svg/email.svg">
+            <span>Email</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <section class="profile-links">
+  </section>
 </main>
 
-{# <section></section> #}
+{# <section class="page-section"></section> #}
 {# <footer></footer> #}
 {% endblock %}
