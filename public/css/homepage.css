@@ -685,6 +685,15 @@ main h2 {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   opacity: 0;
 }
+@media (hover: none) {
+  .profile-links a span {
+    color: #3d525c;
+    opacity: 1;
+  }
+  .profile-links a:hover span {
+    color: #fff;
+  }
+}
 .profile-links-group {
   padding: 20px;
 }

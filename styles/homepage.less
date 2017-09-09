@@ -209,6 +209,17 @@ main {
       text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
       opacity: 0;
     }
+
+    @media (hover: none) {
+      span {
+        color: @heading-color;
+        opacity: 1;
+      }
+
+      &:hover span {
+        color: #fff;
+      }
+    }
   }
 }
 
