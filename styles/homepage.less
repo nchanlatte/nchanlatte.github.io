@@ -5,6 +5,8 @@
 @section-offset: 5.2vh;
 @section-alt-bg: #607d8b;
 
+@caps-text-font: Jura, Roboto, Arial, Helvetica, sans-serif;
+
 @profile-link-duration: 0.8s;
 @profile-link-timing: cubic-bezier(0.23, 1, 0.32, 1);
 
@@ -15,7 +17,7 @@
 main,
 .page-section,
 footer {
-  padding: 25px;
+  padding: 40px 25px;
 }
 
 main {
@@ -70,8 +72,7 @@ footer {
 */
 
 .page-heading {
-  font-size: 3em;
-  font-weight: 100;
+  font: 300 3.5em @caps-text-font;
 }
 
 h2 {
@@ -86,9 +87,7 @@ main {
   }
 
   .page-heading {
-    margin: 5px 0;
-    font-family: Raleway, Roboto, Arial, Helvetica, sans-serif;
-    font-weight: 300;
+    margin: 0 0 20px;
     color: @primary-color;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -107,14 +106,16 @@ main {
 .profile-links {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
+
+  @media (min-width: 40em) {
+    margin-top: 60px;
+  }
 
   h1 {
     position: relative;
-    z-index: -1;
     margin: 0 0 15px;
-    font-size: 0.8125rem;
-    font-weight: 500;
+    font: 700 0.875rem @caps-text-font;
     color: @heading-color;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -150,7 +151,8 @@ main {
     display: flex;
     width: 96px;
     height: 96px;
-    font: 0.875rem Roboto, sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 300;
     text-decoration: none;
     flex-direction: column;
     justify-content: center;
@@ -198,6 +200,7 @@ main {
     svg {
       width: 48px;
       height: 48px;
+      margin-bottom: 3px;
       filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.15));
     }
 
