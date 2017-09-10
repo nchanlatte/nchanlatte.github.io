@@ -117,18 +117,18 @@ main {
     margin: 0 0 15px;
     font: 700 0.875rem @caps-text-font;
     color: @heading-color;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 
     &::after {
       position: absolute;
       top: 50%;
-      left: 0;
       right: 0;
+      left: 0;
       z-index: -1;
-      border-top: 1px solid hsl(200, 5%, 80%);
       content: "";
+      border-top: 1px solid hsl(200, 5%, 80%);
     }
 
     span {
@@ -138,10 +138,10 @@ main {
   }
 
   ul {
+    display: flex;
     padding: 0;
     margin: 0;
     list-style-type: none;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -158,9 +158,9 @@ main {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    transition-property: color, text-shadow;
-    transition-duration: @profile-link-duration;
     transition-timing-function: @profile-link-timing;
+    transition-duration: @profile-link-duration;
+    transition-property: color, text-shadow;
 
     &,
     &::after,

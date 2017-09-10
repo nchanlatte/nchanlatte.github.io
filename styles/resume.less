@@ -2,8 +2,8 @@
 @import "shared/base";
 
 body {
-  color: @text-color;
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: @text-color;
 }
 
 p,
@@ -36,9 +36,9 @@ ul {
 }
 
 .page-heading {
-  margin: 0 0 2rem;
-  padding-left: 1em;
   padding-right: 1em;
+  padding-left: 1em;
+  margin: 0 0 2rem;
   font-family: Raleway, Roboto, Arial, Helvetica, sans-serif;
   font-size: 3rem;
   font-weight: 300;
@@ -53,13 +53,13 @@ ul {
 .section-heading {
   display: inline-block;
   padding: 1px 4px;
-  background-color: @primary-color;
-  color: #fff;
   margin-bottom: 1rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  color: #fff;
   text-transform: uppercase;
+  letter-spacing: 0.15em;
+  background-color: @primary-color;
 }
 
 .section-content {
@@ -99,8 +99,8 @@ ul {
 
 section {
   max-width: 64em;
-  margin: 0 1rem;
   padding: 2rem 0;
+  margin: 0 1rem;
 }
 
 section + section {
@@ -113,8 +113,8 @@ section + section {
 
 .section-content {
   flex: 1;
-  color: @text-color;
   line-height: 1.5;
+  color: @text-color;
 }
 
 .entry {
@@ -129,8 +129,8 @@ section + section {
 
 .time-period {
   margin-bottom: 0.5em;
-  color: @text-color;
   font-size: 0.875rem;
+  color: @text-color;
 }
 
 .grid {
@@ -165,17 +165,17 @@ section + section {
 
 @media (min-width: 30em) {
   section {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
     padding-top: 2.5rem;
     padding-bottom: 2.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
   }
 }
 
 @media (min-width: 40em) {
   section {
-    margin-left: 3rem;
     margin-right: 3rem;
+    margin-left: 3rem;
   }
 }
 
@@ -198,8 +198,8 @@ section + section {
 
 @media (min-width: 64em) {
   section {
-    margin-left: 4rem;
     margin-right: 4rem;
+    margin-left: 4rem;
   }
 
   .entry {
@@ -218,8 +218,8 @@ section + section {
 
 @media (min-width: 72em) {
   section {
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
   }
 }
 
