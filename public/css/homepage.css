@@ -457,21 +457,25 @@ template {
           box-sizing: border-box;
 }
 html {
-  font: 16px Roboto, Arial, Helvetica, sans-serif;
-  font-display: swap;
+  font-size: 16px;
 }
 body {
   margin: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: #475257;
 }
 ::-moz-selection {
   color: #fff;
-  background-color: #0a5276;
   text-shadow: none;
+  background-color: #235770;
 }
 ::selection {
   color: #fff;
-  background-color: #0a5276;
   text-shadow: none;
+  background-color: #235770;
+}
+.u-hidden {
+  display: none !important;
 }
 /*
 ** Layout

@@ -9,33 +9,36 @@
 {% endblock %}
 
 {% block content %}
-<header class="page-header">
-  <h1 class="page-heading">Matt Turco</h1>
-  <p class="contact-info"><a href="mailto:matt.turco@gmail.com">matt.turco@gmail.com</a></p>
-</header>
+<article class="Resume">
+  <header class="Resume-header">
+    <h1 class="Resume-name">Matt Turco</h1>
+    <ul class="Resume-contactInfo">
+      <li class="Resume-contactInfoItem">Omaha, NE</li>
+      <li class="Resume-contactInfoItem"><a href="mailto:matt.turco@gmail.com">matt.turco@gmail.com</a></li>
+    </ul>
+  </header>
 
-<main>
-  {# <section>
-    <header>
-      <h1 class="section-heading">About</h1>
+  {# <section class="Resume-section">
+    <header class="Resume-sectionHeader">
+      <h1 class="Resume-sectionHeading">About</h1>
     </header>
 
-    <div class="section-content">
+    <div class="Resume-content">
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede. Donec nec justo eget felis facilisis fermentum.</p>
     </div>
   </section> #}
 
-  <section>
-    <header>
-      <h1 class="section-heading">Experience</h1>
+  <section class="Resume-section">
+    <header class="Resume-sectionHeader">
+      <h1 class="Resume-sectionHeading">Experience</h1>
     </header>
 
-    <div class="section-content">
-      <div class="entry row">
-        <div class="side-col">
-          <p class="time-period">May 2015&ndash;Present</p>
+    <div class="Resume-content">
+      <div class="Resume-row">
+        <div class="Resume-column--right">
+          <p class="Resume-date">May 2015&ndash;Present</p>
         </div>
-        <div class="main-col">
+        <div class="Resume-column">
           <h2>UX Developer</h2>
           <h3>Gallup</h3>
           <ul>
@@ -47,11 +50,11 @@
         </div>
       </div>
 
-      <div class="entry row">
-        <div class="side-col">
-          <p class="time-period">Feb 2015&ndash;May 2015</p>
+      <div class="Resume-row">
+        <div class="Resume-column--right">
+          <p class="Resume-date">Feb 2015&ndash;May 2015</p>
         </div>
-        <div class="main-col">
+        <div class="Resume-column">
           <h2>UX Developer Intern</h2>
           <h3>Gallup</h3>
           <ul>
@@ -61,11 +64,11 @@
         </div>
       </div>
 
-      <div class="entry row">
-        <div class="side-col">
-          <p class="time-period">Nov 2012&ndash;Feb 2015</p>
+      <div class="Resume-row">
+        <div class="Resume-column--right">
+          <p class="Resume-date">Nov 2012&ndash;Feb 2015</p>
         </div>
-        <div class="main-col">
+        <div class="Resume-column">
           <h2>Web Developer</h2>
           <h3>Optimum Data</h3>
           <ul>
@@ -75,11 +78,11 @@
         </div>
       </div>
 
-      <div class="entry row hidden">
-        <div class="side-col">
-          <p class="time-period">Aug 2008&ndash;Nov 2012</p>
+      <div class="Resume-row u-hidden">
+        <div class="Resume-column--right">
+          <p class="Resume-date">Aug 2008&ndash;Nov 2012</p>
         </div>
-        <div class="main-col">
+        <div class="Resume-column">
           <h2>Order Picker</h2>
           <h3>Optimum Data</h3>
           <ul>
@@ -91,17 +94,17 @@
     </div>
   </section>
 
-  <section>
-    <header>
-      <h1 class="section-heading">Education</h1>
+  <section class="Resume-section">
+    <header class="Resume-sectionHeader">
+      <h1 class="Resume-sectionHeading">Education</h1>
     </header>
 
-    <div class="section-content">
-      <div class="entry row">
-        <div class="side-col">
-          <p class="time-period">May 2015</p>
+    <div class="Resume-content">
+      <div class="Resume-row">
+        <div class="Resume-column--right">
+          <p class="Resume-date">May 2015</p>
         </div>
-        <div class="main-col">
+        <div class="Resume-column">
           <h2>Bachelor of Science in Business Administration</h2>
           <h3>Creighton University</h3>
           <p>Business Intelligence &amp; Analytics (3.75 GPA)</p>
@@ -110,13 +113,13 @@
     </div>
   </section>
 
-  <section>
-    <header>
-      <h1 class="section-heading">Skills</h1>
+  <section class="Resume-section">
+    <header class="Resume-sectionHeader">
+      <h1 class="Resume-sectionHeading">Skills</h1>
     </header>
 
-    <div class="section-content grid">
-      <div class="grid-item grid-item--2">
+    <div class="Resume-content Resume-content--grid">
+      <div class="Resume-gridItem Resume-gridItem--2">
         <h2>Front end development</h2>
         <ul>
           <li>Composing applications from reusable components</li>
@@ -126,7 +129,7 @@
         </ul>
       </div>
 
-      <div class="grid-item grid-item--2">
+      <div class="Resume-gridItem Resume-gridItem--2">
         <h2>Leadership</h2>
         <ul>
           <li>Establishing and documenting standards and processes</li>
@@ -137,5 +140,5 @@
       </div>
     </div>
   </section>
-</main>
+</article>
 {% endblock %}

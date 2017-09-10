@@ -1,3 +1,4 @@
+@import (reference) "definitions";
 @import (inline) "./node_modules/normalize.css/normalize.css";
 
 *,
@@ -7,16 +8,23 @@
 }
 
 html {
-  font: 16px Roboto, Arial, Helvetica, sans-serif;
-  font-display: swap;
+  font-size: 16px;
 }
 
 body {
   margin: 0;
+  font-family: @font-stack;
+  color: @text-color;
 }
 
 ::selection {
   color: #fff;
-  background-color: hsl(200, 85%, 25%);
   text-shadow: none;
+  background-color: #235770;
+}
+
+// Utility classes
+
+.u-hidden {
+  display: none !important;
 }
