@@ -51,7 +51,7 @@ gulp.task('html', () => {
 
 gulp.task('default', cb => runSequence('clean', ['css', 'copy-static'], 'html', cb));
 
-gulp.task('watch', ['default'], () => {
+gulp.task('watch', () => {
   gulp.watch('styles/**', () => runSequence('css', 'html'));
   gulp.watch('static/**', () => runSequence('copy-static', 'html'));
   gulp.watch(['templates/**', 'pages/**'], ['html']);
