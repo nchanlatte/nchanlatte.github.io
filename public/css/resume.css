@@ -680,11 +680,11 @@ body {
   }
 }
 .Resume-row + .Resume-row {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 @media print {
   .Resume-row + .Resume-row {
-    margin-top: 1.5rem;
+    margin-top: 1.25rem;
   }
 }
 .Resume-column {
@@ -728,7 +728,7 @@ body {
 }
 @media print {
   html {
-    margin: 1cm;
+    margin: 1cm 1.25cm;
     font-size: 13px;
   }
 }
