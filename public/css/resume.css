@@ -676,6 +676,7 @@ body {
 @media print {
   .Resume-sectionHeading {
     padding-top: 2px;
+    font-weight: bold;
     color: #0f7cb3;
     background-color: transparent;
   }
