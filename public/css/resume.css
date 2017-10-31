@@ -487,6 +487,31 @@ body {
     display: none !important;
   }
 }
+@media screen and (max-width: 479px) {
+  .u-hidden--xs {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 639px) {
+  .u-hidden--sm {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .u-hidden--md {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .u-hidden--lg {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .u-hidden--xl {
+    display: none !important;
+  }
+}
 .Resume a {
   color: #0f7cb3;
   text-decoration: none;
@@ -499,43 +524,61 @@ body {
   border-color: currentColor;
 }
 .Resume-header {
-  padding: 3rem 1rem;
-  color: #fff;
-  text-align: center;
-  background-color: #0f7cb3;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 3rem 0 1.5rem;
+}
+@media (min-width: 768px) {
+  .Resume-header {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+}
+@media print, (min-width: 1024px) {
+  .Resume-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 @media print {
   .Resume-header {
-    padding: 0 0 1.5rem;
-    background-color: transparent;
-    border-bottom: 1px solid #c9cdcf;
+    padding: 0 0 1rem;
   }
 }
 .Resume-header a {
   color: inherit;
 }
 .Resume-name {
-  margin: 0 0 1.5rem;
-  font-family: Raleway, Roboto, Arial, Helvetica, sans-serif;
+  margin: 0 0 1rem -4px;
   font-size: 3rem;
   font-weight: 300;
+  line-height: 1;
+  color: #0f7cb3;
 }
-@media print {
+@media print, (min-width: 1024px) {
   .Resume-name {
-    margin-bottom: 1rem;
-    color: #0f7cb3;
+    margin-bottom: -4px;
   }
 }
 .Resume-contactInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  margin: 0;
+  padding: 0 0 5px;
+  margin: 0 -1rem -5px;
+  overflow: hidden;
+  line-height: 1.5;
   list-style-type: none;
+}
+@media (min-width: 355px) {
+  .Resume-contactInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: inherit;
+  }
 }
 @media print {
   .Resume-contactInfo {
@@ -543,49 +586,56 @@ body {
   }
 }
 .Resume-contactInfoItem {
-  padding: 0 1rem;
-}
-.Resume-contactInfoItem + .Resume-contactInfoItem {
+  padding: 0 calc(1rem + 2px) 0 1rem;
+  margin-left: -2px;
   border-left: 1px solid currentColor;
 }
+.Resume-header,
 .Resume-section {
-  max-width: 64em;
-  padding: 2rem 0;
+  max-width: 1024px;
   margin: 0 1rem;
 }
-@media (min-width: 30em) {
+@media (min-width: 480px) {
+  .Resume-header,
   .Resume-section {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
     margin-right: 1.5rem;
     margin-left: 1.5rem;
   }
 }
 @media (min-width: 40em) {
+  .Resume-header,
   .Resume-section {
     margin-right: 3rem;
     margin-left: 3rem;
   }
 }
-@media print, (min-width: 48em) {
-  .Resume-section {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
 @media (min-width: 72em) {
+  .Resume-header,
   .Resume-section {
     margin-right: auto;
     margin-left: auto;
   }
 }
 @media print {
+  .Resume-header,
   .Resume-section {
     max-width: none;
+    margin: 0;
+  }
+}
+.Resume-section {
+  padding: 1rem 0;
+}
+@media (min-width: 480px) {
+  .Resume-section {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    margin: 0;
+  }
+}
+@media print {
+  .Resume-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 @media print {
@@ -593,18 +643,9 @@ body {
     padding-bottom: 0;
   }
 }
-.Resume-section + .Resume-section {
-  border-top: 1px solid #c9cdcf;
-}
-@media (min-width: 48em) {
-  .Resume-sectionHeader {
-    width: 10rem;
-  }
-}
-@media print {
-  .Resume-sectionHeader {
-    width: 8rem;
-  }
+.Resume-sectionHeader {
+  position: relative;
+  border-top: 2px solid #0f7cb3;
 }
 .Resume-sectionHeading {
   display: inline-block;
@@ -616,10 +657,26 @@ body {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  vertical-align: top;
   background-color: #0f7cb3;
+  border: 2px solid #0f7cb3;
+}
+@media print, (min-width: 48em) {
+  .Resume-sectionHeading {
+    position: absolute;
+    top: 0;
+    border-top: 0;
+  }
+}
+@media (min-width: 48em) {
+  .Resume-sectionHeading {
+    margin-bottom: 0;
+  }
 }
 @media print {
   .Resume-sectionHeading {
+    padding-top: 2px;
+    font-weight: bold;
     color: #0f7cb3;
     background-color: transparent;
   }
@@ -631,10 +688,16 @@ body {
   line-height: 1.5;
   color: #475257;
 }
+@media print, (min-width: 48em) {
+  .Resume-content {
+    padding-top: 0.75rem;
+    padding-left: 8rem;
+  }
+}
 .Resume-content--grid {
   margin: -1rem;
 }
-@media print, (min-width: 64em) {
+@media print, (min-width: 1024px) {
   .Resume-content--grid {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -646,14 +709,15 @@ body {
 .Resume-content h2,
 .Resume-content h3 {
   margin-top: 0;
-  margin-bottom: 0.25em;
   color: #3d525c;
 }
 .Resume-content h2 {
+  margin-bottom: 0;
   font-size: 1.25rem;
   font-weight: 500;
 }
 .Resume-content h3 {
+  margin-bottom: 0.25em;
   font-size: 1.1rem;
   font-weight: 400;
 }
@@ -672,7 +736,7 @@ body {
 .Resume-content li {
   margin-bottom: 0.5em;
 }
-@media print, (min-width: 64em) {
+@media print, (min-width: 1024px) {
   .Resume-row {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -680,11 +744,11 @@ body {
   }
 }
 .Resume-row + .Resume-row {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 @media print {
   .Resume-row + .Resume-row {
-    margin-top: 1.25rem;
+    margin-top: 1rem;
   }
 }
 .Resume-column {
@@ -692,20 +756,15 @@ body {
       -ms-flex: 1 0 0%;
           flex: 1 0 0%;
 }
-@media (min-width: 48em) {
-  .Resume-column--right {
-    float: right;
-  }
-}
-@media print, (min-width: 64em) {
+@media print, (min-width: 1024px) {
   .Resume-column--right {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 9rem;
-            flex: 0 0 9rem;
-    margin-left: 3rem;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    margin-left: 2.5rem;
   }
 }
 .Resume-date {
@@ -728,6 +787,7 @@ body {
 }
 @media print {
   html {
+    height: 0;
     margin: 1cm 1.25cm;
     font-size: 13px;
   }
