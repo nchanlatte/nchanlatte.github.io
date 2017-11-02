@@ -208,6 +208,13 @@
     li {
       margin-bottom: 0.5em;
     }
+    
+    @media print {
+      a::after {
+        font-size: 0.75em;
+        content: " (" attr(data-short-url) ")";
+      }
+    }
   }
 
   &-row {

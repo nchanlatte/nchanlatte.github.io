@@ -736,6 +736,12 @@ body {
 .Resume-content li {
   margin-bottom: 0.5em;
 }
+@media print {
+  .Resume-content a::after {
+    font-size: 0.75em;
+    content: " (" attr(data-short-url) ")";
+  }
+}
 @media print, (min-width: 1024px) {
   .Resume-row {
     display: -webkit-box;
