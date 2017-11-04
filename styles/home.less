@@ -1,0 +1,165 @@
+@import "shared/base";
+
+.Home {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-heading {
+    margin: 0 0 0.25em;
+    font: 3em Kanit, @font-stack;
+    color: @primary-color;
+    letter-spacing: 0.03em;
+  }
+
+  &-tagline {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: center;
+    text-transform: lowercase;
+  }
+
+  &-links {
+    margin-top: 40px;
+
+    @media (min-width: @screen-md-min) {
+      display: flex;
+    }
+  }
+
+  &-linksGroup {
+    margin: 25px;
+  }
+
+  &-linksGroupHeading {
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 0.8125em;
+    font-weight: 400;
+    color: @subheading-color;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      height: 1px;
+      margin: auto;
+      content: '';
+      background-color: hsl(200, 5%, 80%);
+    }
+
+    span {
+      display: inline-block;
+      padding: 0 8px;
+      background-color: #fff;
+      border-bottom: 0;
+    }
+  }
+
+  &-linksList {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &-link {
+    position: relative;
+    display: flex;
+    width: 96px;
+    height: 96px;
+    font-size: 0.9375em;
+    color: @text-color;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &,
+    &::after,
+    svg,
+    span {
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &::after {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      z-index: -1;
+      content: "";
+      border-radius: 50%;
+      transform: scale3d(1.15, 1.15, 1);
+    }
+
+    svg {
+      width: 48px;
+      height: 48px;
+      fill: currentColor;
+      filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.15));
+    }
+
+    span {
+      margin-top: 5px;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+
+      &::after {
+        transform: scale3d(1, 1, 1);
+      }
+
+      svg {
+        fill: #fff;
+      }
+
+      span {
+        opacity: 1;
+      }
+    }
+
+    @media (hover: none) {
+      span {
+        color: @heading-color;
+        opacity: 1;
+      }
+
+      &:hover span {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.make-home-link(@name, @color) {
+  .Home-link--@{name} {
+    svg {
+      fill: @color;
+    }
+
+    &:hover::after {
+      background-color: @color;
+    }
+  }
+}
+
+.make-home-link(github, #424242);
+.make-home-link(bitbucket, #0288d1);
+.make-home-link(resume, #607D8B);
+.make-home-link(linkedin, #ff5722);
+.make-home-link(email, #009688);

@@ -1,62 +1,58 @@
 {% extends "layouts/default.njk" %}
 {% set description = 'Matt Turco is a front end developer at Gallup in Omaha, Nebraska.' %}
+{% set bodyClass = 'Home' %}
 
 {% block head %}
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Jura:300,700&text=MATT%20TURCO%20CODE%20CONTACT">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300">
-<link rel="stylesheet" href="css/homepage.min.css" inline>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kanit&text=Matt%20Turco">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400">
+<link rel="stylesheet" href="css/home.min.css" inline>
 {% endblock %}
 
 {% block content %}
-<main>
-  <h1 class="page-heading">Matt Turco</h1>
-  <h2>front end developer &amp; design enthusiast</h2>
-  
-  <section class="profile-links">
-    <div class="profile-links-group">
-      <h1><span>Code</span></h1>
-      <ul>
-        <li>
-          <a href="https://github.com/mturco" class="github">
-            <img inline src="svg/github.svg">
-            <span>GitHub</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://bitbucket.org/mturco" class="bitbucket">
-            <img inline src="svg/bitbucket.svg">
-            <span>Bitbucket</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+<h1 class="Home-heading">Matt Turco</h1>
+<h2 class="Home-tagline">Front end developer &amp; design enthusiast</h2>
 
-    <div class="profile-links-group">
-      <h1><span>Contact</span></h1>
-      <ul>
-        <li>
-          <a href="resume.html" class="resume">
-            <img inline src="svg/resume.svg">
-            <span>Resume</span>
-          </a>
-        </li>
-        <li>
-          <a href="http://www.linkedin.com/in/mattturco" class="linkedin">
-            <img inline src="svg/linkedin.svg">
-            <span>LinkedIn</span>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:matt.turco@gmail.com" class="email">
-            <img inline src="svg/email.svg">
-            <span>Email</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-</main>
+<section class="Home-links">
+  <div class="Home-linksGroup">
+    <h1 class="Home-linksGroupHeading"><span>Code</span></h1>
+    <ul class="Home-linksList">
+      <li>
+        <a href="https://github.com/mturco" class="Home-link Home-link--github">
+          <img inline src="svg/github.svg">
+          <span>GitHub</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://bitbucket.org/mturco" class="Home-link Home-link--bitbucket">
+          <img inline src="svg/bitbucket.svg">
+          <span>Bitbucket</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 
-{# <section class="page-section"></section> #}
-{# <footer></footer> #}
+  <div class="Home-linksGroup">
+    <h1 class="Home-linksGroupHeading"><span>Contact</span></h1>
+    <ul class="Home-linksList">
+      <li>
+        <a href="resume.html" class="Home-link Home-link--resume">
+          <img inline src="svg/resume.svg">
+          <span>Resume</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://www.linkedin.com/in/mattturco" class="Home-link Home-link--linkedin">
+          <img inline src="svg/linkedin.svg">
+          <span>LinkedIn</span>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:matt.turco@gmail.com" class="Home-link Home-link--email">
+          <img inline src="svg/email.svg">
+          <span>Email</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
 {% endblock %}

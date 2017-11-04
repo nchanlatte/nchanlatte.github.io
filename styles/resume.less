@@ -36,14 +36,18 @@
   }
 
   &-name {
-    margin: 0 0 1rem -4px; // text alignment adjustments
-    font-size: 3rem;
-    font-weight: 300;
+    margin: 0 0 1rem -3px; // text alignment adjustments
+    font: 3em Kanit, @font-stack;
     line-height: 1;
     color: @primary-color;
+    letter-spacing: 0.03em;
 
     @media print, (min-width: @screen-lg-min) {
       margin-bottom: -4px; // text alignment adjustments
+    }
+
+    a {
+      display: inline-block;
     }
   }
 
@@ -208,7 +212,7 @@
     li {
       margin-bottom: 0.5em;
     }
-    
+
     @media print {
       a::after {
         font-size: 0.75em;

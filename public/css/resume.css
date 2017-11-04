@@ -467,12 +467,12 @@ body {
 ::-moz-selection {
   color: #fff;
   text-shadow: none;
-  background-color: #235770;
+  background-color: #175e82;
 }
 ::selection {
   color: #fff;
   text-shadow: none;
-  background-color: #235770;
+  background-color: #175e82;
 }
 .u-hidden {
   display: none !important;
@@ -554,16 +554,19 @@ body {
   color: inherit;
 }
 .Resume-name {
-  margin: 0 0 1rem -4px;
-  font-size: 3rem;
-  font-weight: 300;
+  margin: 0 0 1rem -3px;
+  font: 3em Kanit, Roboto, Arial, Helvetica, sans-serif;
   line-height: 1;
   color: #0f7cb3;
+  letter-spacing: 0.03em;
 }
 @media print, (min-width: 1024px) {
   .Resume-name {
     margin-bottom: -4px;
   }
+}
+.Resume-name a {
+  display: inline-block;
 }
 .Resume-contactInfo {
   padding: 0 0 5px;
