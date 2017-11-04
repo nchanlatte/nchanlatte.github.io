@@ -1,0 +1,62 @@
+{% extends "layouts/default.njk" %}
+{% set description = 'Matt Turco is a front end developer at Gallup in Omaha, Nebraska.' %}
+
+{% block head %}
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400">
+<link rel="stylesheet" href="css/photography.min.css" inline>
+{% endblock %}
+
+{% block content %}
+<main class="Gallery">
+  <header class="Gallery-header">
+    <a href="/" class="Gallery-logoLink">
+      <img inline src="svg/logo.svg" class="Gallery-logo">
+    </a>
+    <h1 class="Gallery-heading">Photography</h1>
+  </header>
+
+  <div class="Gallery-grid">
+    {{ image('v1509824748/IMG_20160108_195608.jpg') }}
+    {{ image('v1509824741/IMG_20160704_190132.jpg') }}
+    {{ image('v1509824888/MVIMG_20171024_000337.jpg') }}
+    {{ image('v1509824883/MVIMG_20171028_083314.jpg') }}
+    {{ image('v1509824880/MVIMG_20171016_083152.jpg') }}
+    {{ image('v1509824865/IMG_20171003_163047.jpg') }}
+    {{ image('v1509824862/IMG_20171005_151846.jpg') }}
+    {{ image('v1509824846/IMG_20171008_105234.jpg') }}
+    {{ image('v1509824845/IMG_20171008_143907.jpg') }}
+    {{ image('v1509824840/IMG_20171004_155743.jpg') }}
+    {{ image('v1509824835/IMG_20171003_124444.jpg') }}
+    {{ image('v1509824820/IMG_20171003_124647.jpg') }}
+    {{ image('v1509824819/IMG_20171003_114524.jpg') }}
+    {{ image('v1509824815/IMG_20171002_091528.jpg') }}
+    {{ image('v1509824810/MVIMG_20171028_085644.jpg') }}
+    {{ image('v1509824793/IMG_20161028_155531.jpg') }}
+    {{ image('v1509824790/IMG_20171003_105957.jpg') }}
+    {{ image('v1509824781/IMG_20161105_162636.jpg') }}
+    {{ image('v1509824766/IMG_20161021_165411.jpg') }}
+    {{ image('v1509824742/IMG_20160707_120013.jpg') }}
+    {{ image('v1509824741/IMG_20160908_182514.jpg') }}
+  </div>
+</main>
+
+<div class="Gallery-viewer"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="js/photography.js" inline></script>
+{% endblock %}
+
+{% macro image(suffix) %}
+<div class="Gallery-imageWrapper">
+  <a class="Gallery-image"
+    data-preview="//res.cloudinary.com/mturco/image/upload/c_scale,f_auto,q_auto:low,w_20/{{ suffix }}"
+    data-thumb="//res.cloudinary.com/mturco/image/upload/c_scale,f_auto,q_auto,w_480/{{ suffix }}"
+    data-full="//res.cloudinary.com/mturco/image/upload/f_auto,q_auto:best/{{ suffix }}"
+    href="//res.cloudinary.com/mturco/image/upload/f_auto,q_auto:best/{{ suffix }}">
+    <noscript>
+      <img src="//res.cloudinary.com/mturco/image/upload/c_scale,f_auto,q_auto,w_480/{{ suffix }}">
+    </noscript>
+  </a>
+</div>
+{% endmacro %}

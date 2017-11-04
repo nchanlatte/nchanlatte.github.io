@@ -9,6 +9,9 @@ const less = require('gulp-less');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const csswring = require('csswring');
+// JS
+const buble = require('gulp-buble');
+const uglify = require('gulp-uglify');
 // HTML
 const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
@@ -35,6 +38,17 @@ gulp.task('css', () => {
     .pipe(gulp.dest(`${BUILD}/css`));
 });
 
+gulp.task('js', () => {
+  return gulp.src('scripts/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(buble())
+    .pipe(gulp.dest(`${BUILD}/js`))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(`${BUILD}/js`));
+});
+
 gulp.task('copy-static', () => gulp.src('static/**').pipe(gulp.dest(BUILD)));
 
 gulp.task('html', () => {
@@ -49,10 +63,11 @@ gulp.task('html', () => {
 });
 
 
-gulp.task('default', cb => runSequence('clean', ['css', 'copy-static'], 'html', cb));
+gulp.task('default', cb => runSequence('clean', ['css', 'js', 'copy-static'], 'html', cb));
 
 gulp.task('watch', () => {
   gulp.watch('styles/**', () => runSequence('css', 'html'));
+  gulp.watch('scripts/**', () => runSequence('js', 'html'));
   gulp.watch('static/**', () => runSequence('copy-static', 'html'));
   gulp.watch(['templates/**', 'pages/**'], ['html']);
 });
