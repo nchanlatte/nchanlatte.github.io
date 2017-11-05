@@ -562,7 +562,7 @@ body {
 }
 @media print, (min-width: 1024px) {
   .Resume-name {
-    margin-bottom: -4px;
+    margin-bottom: -6px;
   }
 }
 .Resume-name a {
