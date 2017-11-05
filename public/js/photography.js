@@ -15,6 +15,7 @@
       if (img.getAttribute('data-loaded') < LOADED_PREVIEW) {
         img.style.backgroundImage = "url(" + urlPreview + ")";
         img.setAttribute('data-loaded', LOADED_PREVIEW);
+        loadThumbnail(img);
       }
     });
   
@@ -23,8 +24,6 @@
       e.preventDefault();
     });
   });
-  
-  loadThumbnails();
   
   viewer.addEventListener('click', closeViewer);
   window.addEventListener('scroll', debounce(loadThumbnails, 50));
@@ -58,16 +57,18 @@
   }
   
   function loadThumbnails() {
-    var imgs = Array.prototype.slice.call(document.querySelectorAll('.Gallery-image--preview'));
-    imgs.forEach(function (img) {
-      if (img.getBoundingClientRect().top < window.innerHeight + 500) {
-        var urlThumb = img.getAttribute('data-thumb');
-        preload(urlThumb, function () {
-          img.style.backgroundImage = "url(" + urlThumb + ")";
-          img.classList.remove('Gallery-image--preview');
-        });
-      }
-    });
+    var imgs = Array.prototype.slice.call(document.querySelectorAll(("[data-loaded=\"" + LOADED_PREVIEW + "\"]")));
+    imgs.forEach(loadThumbnail);
+  }
+
+  function loadThumbnail(img) {
+    if (img.getBoundingClientRect().top < window.innerHeight + 500) {
+      var urlThumb = img.getAttribute('data-thumb');
+      preload(urlThumb, function () {
+        img.style.backgroundImage = "url(" + urlThumb + ")";
+        img.classList.remove('Gallery-image--preview');
+      });
+    }
   }
 
   function openViewer(img) {
