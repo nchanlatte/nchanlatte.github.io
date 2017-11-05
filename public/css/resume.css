@@ -656,7 +656,7 @@ body {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: 0.8125rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -679,7 +679,6 @@ body {
 @media print {
   .Resume-sectionHeading {
     padding-top: 2px;
-    font-weight: bold;
     color: #0f7cb3;
     background-color: transparent;
   }
