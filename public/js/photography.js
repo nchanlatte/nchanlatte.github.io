@@ -1,4 +1,8 @@
 (function () {
+  var LOADED_PREVIEW = 1;
+  var LOADED_THUMB = 2;
+  var LOADED_FULL = 3;
+
   var viewer = document.querySelector('.Gallery-viewer');
   var imgs = Array.prototype.slice.call(document.querySelectorAll('[data-preview]'));
   var resetViewer;
@@ -8,12 +12,15 @@
   
     img.classList.add('Gallery-image--preview');
     preload(urlPreview, function () {
-      img.style.backgroundImage = "url(" + urlPreview + ")";
+      if (img.getAttribute('data-loaded') < LOADED_PREVIEW) {
+        img.style.backgroundImage = "url(" + urlPreview + ")";
+        img.setAttribute('data-loaded', LOADED_PREVIEW);
+      }
     });
   
     img.addEventListener('click', function (e) {
       openViewer(img);
-      e.preventDefault();  
+      e.preventDefault();
     });
   });
   
@@ -68,13 +75,13 @@
     var urlThumb = img.getAttribute('data-thumb');
     var urlFull = img.getAttribute('data-full');
 
-    if (!img.hasAttribute('data-loaded')) {
+    if (img.getAttribute('data-loaded') < LOADED_FULL) {
       viewer.style.backgroundImage = "url(" + urlThumb + ")";
 
       preload(urlFull, function () {
         setTimeout(function () {
           viewer.style.backgroundImage = "url(" + urlFull + ")";
-          img.setAttribute('data-loaded', '');
+          img.setAttribute('data-loaded', LOADED_FULL);
         }, 500);
       });
     } else {

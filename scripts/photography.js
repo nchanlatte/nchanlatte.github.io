@@ -1,4 +1,8 @@
 (() => {
+  const LOADED_PREVIEW = 1;
+  const LOADED_THUMB = 2;
+  const LOADED_FULL = 3;
+
   const viewer = document.querySelector('.Gallery-viewer');
   const imgs = Array.prototype.slice.call(document.querySelectorAll('[data-preview]'));
   let resetViewer;
@@ -8,12 +12,15 @@
   
     img.classList.add('Gallery-image--preview');
     preload(urlPreview, () => {
-      img.style.backgroundImage = `url(${urlPreview})`;
+      if (img.getAttribute('data-loaded') < LOADED_PREVIEW) {
+        img.style.backgroundImage = `url(${urlPreview})`;
+        img.setAttribute('data-loaded', LOADED_PREVIEW);
+      }
     });
   
     img.addEventListener('click', (e) => {
       openViewer(img);
-      e.preventDefault();  
+      e.preventDefault();
     });
   });
   
@@ -68,13 +75,13 @@
     const urlThumb = img.getAttribute('data-thumb');
     const urlFull = img.getAttribute('data-full');
 
-    if (!img.hasAttribute('data-loaded')) {
+    if (img.getAttribute('data-loaded') < LOADED_FULL) {
       viewer.style.backgroundImage = `url(${urlThumb})`;
 
       preload(urlFull, () => {
         setTimeout(() => {
           viewer.style.backgroundImage = `url(${urlFull})`;
-          img.setAttribute('data-loaded', '');
+          img.setAttribute('data-loaded', LOADED_FULL);
         }, 500);
       });
     } else {
