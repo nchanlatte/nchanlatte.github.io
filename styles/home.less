@@ -140,10 +140,7 @@
     position: relative;
     display: block;
     padding: 20px;
-    color: inherit;
     text-align: center;
-    text-decoration: none;
-    border-radius: 2px;
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
     &::after {
@@ -165,23 +162,51 @@
       &::after {
         background-color: hsl(200, 20%, 97%);
       }
-
-      .Home-projectName {
-        border-bottom-color: @accent-color;
-      }
     }
 
     &Name {
-      display: inline-block;
       margin: 0 0 0.25em;
       font-size: 1.25em;
+    }
+
+    &Link,
+    &SourceLink {
+      text-decoration: none;
+    }
+
+    &Link {
+      color: inherit;
       border-bottom: 1px solid transparent;
       transition: border-color 0.1s ease-in;
+
+      &:hover,
+      &:focus {
+        border-bottom-color: @accent-color;
+      }
     }
 
     &Description {
       margin: 0;
       line-height: 1.5;
+    }
+
+    &SourceLink {
+      margin-left: 3px;
+      font-size: 0.75em;
+      font-weight: 400;
+      color: inherit;
+      border-radius: 2px;
+
+      svg {
+        width: 24px;
+        height: 24px;
+        vertical-align: bottom;
+        fill: currentColor;
+      }
+
+      &:hover {
+        color: @accent-color;
+      }
     }
   }
 }
