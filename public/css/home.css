@@ -652,19 +652,23 @@ body {
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   opacity: 0;
 }
-.Home-link:hover {
+.Home-link:hover,
+.Home-link:focus {
   -webkit-transform: translateY(-8px);
       -ms-transform: translateY(-8px);
           transform: translateY(-8px);
 }
-.Home-link:hover::after {
+.Home-link:hover::after,
+.Home-link:focus::after {
   -webkit-transform: scale3d(1, 1, 1);
           transform: scale3d(1, 1, 1);
 }
-.Home-link:hover svg {
+.Home-link:hover svg,
+.Home-link:focus svg {
   fill: #fff;
 }
-.Home-link:hover span {
+.Home-link:hover span,
+.Home-link:focus span {
   opacity: 1;
 }
 @media (hover: none) {
@@ -679,36 +683,42 @@ body {
 .Home-link--github svg {
   fill: #424242;
 }
-.Home-link--github:hover::after {
+.Home-link--github:hover::after,
+.Home-link--github:focus::after {
   background-color: #424242;
 }
 .Home-link--bitbucket svg {
   fill: #0288d1;
 }
-.Home-link--bitbucket:hover::after {
+.Home-link--bitbucket:hover::after,
+.Home-link--bitbucket:focus::after {
   background-color: #0288d1;
 }
 .Home-link--resume svg {
   fill: #607d8b;
 }
-.Home-link--resume:hover::after {
+.Home-link--resume:hover::after,
+.Home-link--resume:focus::after {
   background-color: #607d8b;
 }
 .Home-link--linkedin svg {
   fill: #f26a40;
 }
-.Home-link--linkedin:hover::after {
+.Home-link--linkedin:hover::after,
+.Home-link--linkedin:focus::after {
   background-color: #f26a40;
 }
 .Home-link--email svg {
   fill: #009688;
 }
-.Home-link--email:hover::after {
+.Home-link--email:hover::after,
+.Home-link--email:focus::after {
   background-color: #009688;
 }
 .Home-link--photography svg {
   fill: #a3306d;
 }
-.Home-link--photography:hover::after {
+.Home-link--photography:hover::after,
+.Home-link--photography:focus::after {
   background-color: #a3306d;
 }

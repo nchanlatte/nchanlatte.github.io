@@ -122,7 +122,8 @@
       opacity: 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       transform: translateY(-8px);
 
       &::after {
@@ -157,8 +158,11 @@
       fill: @color;
     }
 
-    &:hover::after {
-      background-color: @color;
+    &:hover,
+    &:focus {
+      &::after {
+        background-color: @color;
+      }
     }
   }
 }
