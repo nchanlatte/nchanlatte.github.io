@@ -130,4 +130,57 @@
       }
     }
   }
+
+  &-projects {
+    max-width: 750px;
+    margin-top: 60px;
+  }
+
+  &-project {
+    position: relative;
+    display: block;
+    padding: 20px;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      content: "";
+      border-radius: 2px;
+      transition: background-color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &:hover,
+    &:focus {
+      transform: translate3d(7px, 0, 0);
+
+      &::after {
+        background-color: hsl(200, 20%, 97%);
+      }
+
+      .Home-projectName {
+        border-bottom-color: @accent-color;
+      }
+    }
+
+    &Name {
+      display: inline-block;
+      margin: 0 0 0.25em;
+      font-size: 1.25em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.1s ease-in;
+    }
+
+    &Description {
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
 }
