@@ -175,5 +175,7 @@ module.exports = {
       'animation-iteration-count',
       'animation-direction'
     ],
+    'font-family-no-missing-generic-family-keyword': null,
+    'no-descending-specificity': null,
   },
 };
