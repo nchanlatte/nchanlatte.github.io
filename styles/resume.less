@@ -1,6 +1,16 @@
 @import "shared/base";
 
 .Resume {
+  padding: 1.5rem 0;
+
+  @media (min-width: @screen-md-min) {
+    padding: 2.5rem 0;
+  }
+
+  @media print {
+    padding: 0;
+  }
+
   a {
     color: @primary-color;
     text-decoration: none;
@@ -15,19 +25,15 @@
   &-header {
     align-items: flex-end;
     justify-content: space-between;
-    padding: 3rem 0 1.5rem;
-
-    @media (min-width: @screen-md-min) {
-      padding-top: 4rem;
-      padding-bottom: 2rem;
-    }
+    padding: 1.5rem 0;
 
     @media print, (min-width: @screen-lg-min) {
       display: flex;
     }
 
     @media print {
-      padding: 0 0 1rem;
+      padding-top: 0;
+      padding-bottom: 1rem;
     }
 
     a {
@@ -210,6 +216,10 @@
 
     li {
       margin-bottom: 0.5em;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     @media print {
@@ -241,7 +251,7 @@
       @media print, (min-width: @screen-lg-min) {
         order: 2;
         flex: 0 0 auto;
-        margin-left: 2.5rem;
+        margin-left: 2rem;
       }
     }
   }
@@ -269,7 +279,7 @@
 html {
   @media print {
     height: 0; // hack to avoid extra blank page
-    margin: 1cm 1.25cm;
+    margin: 0.75cm 1.25cm;
     font-size: 13px;
   }
 }
