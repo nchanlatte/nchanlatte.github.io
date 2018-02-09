@@ -201,6 +201,17 @@
       list-style-type: circle;
     }
 
+    .Resume-list--horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -3em;
+
+      li {
+        margin-left: 3em;
+        white-space: nowrap;
+      }
+    }
+
     li {
       margin-bottom: 0.5em;
 
@@ -286,6 +297,6 @@ html {
   @media print {
     height: 0; // hack to avoid extra blank page
     margin: 0.75cm 1cm;
-    font-size: 13px;
+    font-size: 12.5px;
   }
 }
