@@ -109,8 +109,8 @@
     }
 
     @media print {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
     }
 
     &:last-child {
@@ -172,7 +172,7 @@
 
     h2,
     h3 {
-      margin: 0;
+      margin: 0 0 0.125em;
       color: @subheading-color;
     }
 
@@ -226,7 +226,7 @@
 
     @media print {
       a::after {
-        font-size: 0.75em;
+        font-size: 10px;
         content: " (" attr(data-short-url) ")";
       }
     }
@@ -238,10 +238,10 @@
     }
 
     & + & {
-      margin-top: 1.5rem;
+      margin-top: 1.75rem;
 
       @media print {
-        margin-top: 1rem;
+        margin-top: 1.25rem;
       }
     }
   }
@@ -281,10 +281,14 @@
 
   &-gridItem {
     flex: 1 0 0%;
-    padding: 0 1rem 1rem;
+    padding: 0.25rem 1rem 1rem;
 
     &--2 {
       flex-basis: 50%;
+    }
+
+    ul {
+      margin-top: 0.25em;
     }
   }
 }
@@ -297,6 +301,6 @@ html {
   @media print {
     height: 0; // hack to avoid extra blank page
     margin: 0.75cm 1cm;
-    font-size: 12.5px;
+    font-size: 12px;
   }
 }
