@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} | {% endif %}Matt Turco</title>
+  <title>{% if title %}{{ title }}{% elif pageTitle %}{{ pageTitle }} | Matt Turco{% else %}Matt Turco{% endif %}</title>
   {% if description %}<meta name="description" content="{{ description }}">{% endif %}
 
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
