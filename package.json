@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Source for my personal site",
   "scripts": {
-    "start": "live-server public"
+    "start": "npm-run-all -p watch server",
+    "build": "gulp",
+    "watch": "gulp watch",
+    "server": "live-server public"
   },
   "author": "",
   "license": "ISC",
@@ -27,7 +30,8 @@
     "stylelint-order": "^0.8.0"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "npm-run-all": "^4.1.2"
   },
   "browserslist": [
     "last 3 versions",
