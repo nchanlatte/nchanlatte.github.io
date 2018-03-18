@@ -1,5 +1,8 @@
 @import "shared/base";
 
+@link-transition-duration: 0.4s;
+@link-transition-easing: cubic-bezier(0.23, 1, 0.32, 1);
+
 .Home {
   display: flex;
   min-height: 100vh;
@@ -43,17 +46,17 @@
       padding: 0 10px;
 
       &::before,
-    &::after {
-      position: absolute;
-      top: 50%;
+      &::after {
+        position: absolute;
+        top: 50%;
         width: 100vw;
-      content: '';
+        content: '';
         border-top: 1px solid hsl(200, 12%, 90%);
       }
 
       &::before {
         right: 100%;
-    }
+      }
 
       &::after {
         left: 100%;
@@ -101,8 +104,8 @@
     &::after,
     svg,
     span {
-      transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-      transition-duration: 0.4s;
+      transition-timing-function: @link-transition-easing;
+      transition-duration: @link-transition-duration;
       transition-property: transform, background-color;
     }
 
@@ -152,7 +155,7 @@
     display: block;
     padding: 20px;
     text-align: center;
-    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform @link-transition-duration @link-transition-easing;
 
     &::after {
       position: absolute;
@@ -163,7 +166,7 @@
       z-index: -1;
       content: "";
       border-radius: 2px;
-      transition: background-color 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      transition: background-color @link-transition-duration @link-transition-easing;
     }
 
     &:hover,
