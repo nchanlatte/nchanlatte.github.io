@@ -16,7 +16,7 @@ const uglify = require('gulp-uglify');
 const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
-const BUILD = 'public';
+const BUILD = 'docs';
 
 gulp.task('clean', () => del.sync([`${BUILD}/**`, `!${BUILD}`]));
 

@@ -1,7 +1,1 @@
-# mturco.com
-This is the repository for my personal site. It is built using a custom static site generator of sorts (using Gulp and [Nunjucks](https://mozilla.github.io/nunjucks/)) and hosted by [Netlify](https://www.netlify.com/) which automatically distributes it across their CDN and comes with some other benefits like continuous deployment on each commit. It's probably a bit overdone for a personal site but it also serves a demonstrational purpose.
-
-## Performance
-This site doesn't exactly get heavy traffic but performance is still a priority. I'm using some Gulp plugins to allow me to automatically inline all styles, scripts, and SVG icons at build time. This improves performance by limiting the number of HTTP requests (excluding webfonts, the homepage loads in a single ~15KB request). Since most users will be first-time visitors, caching is not really a concern.
-
-On the [Photography page](https://mturco.com/photography), I'm using [Cloudinary](https://cloudinary.com/) to do some progressive image loading. When you visit that page, initial 40x40 pixel versions (1-4KB) of each image are loaded, scaled up to thumbnail size, and heavily blurred. Then, for images inside the viewport, larger thumbnail images (25-50KB) are loaded and replace the blurry placeholders. When a thumbnail is clicked on, the full resolution image (1-2MB) begins loading in the background while the thumbnail is scaled to fill the screen. The full image replaces the thumbnail once loaded. If JavaScript is disabled, thumbnails are shown and link to the full versions. All of this is do-able without Cloudinary but their URL-based API makes this super easy and allows me to not have any server side code.
+# nchanlatte.github.io

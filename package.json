@@ -1,12 +1,12 @@
 {
-  "name": "mturco.com",
+  "name": "nchanlatte.github.io",
   "version": "1.0.0",
   "description": "Source for my personal site",
   "scripts": {
     "start": "npm-run-all -p watch server",
     "build": "gulp",
     "watch": "gulp watch",
-    "server": "live-server public"
+    "server": "live-server docs"
   },
   "author": "",
   "license": "ISC",

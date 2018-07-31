@@ -1,50 +1,45 @@
 {% extends "layouts/default.njk" %}
-{% set description = 'Matt Turco is a front end engineer at Namely in NYC.' %}
+{% set description = '' %}
 {% set bodyClass = 'Home' %}
 
 {% block head %}
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kanit&text=Matt%20Turco">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Kanit">
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,700">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Handlee:300,400,700">
 <link rel="stylesheet" href="css/home.min.css" inline>
 {% endblock %}
 
 {% block content %}
-<h1 class="Home-name">Matt Turco</h1>
-<h2 class="Home-tagline"><span class="Home-taglineLine">Front end developer</span> <span class="Home-taglineLine">&amp; design enthusiast</span></h2>
+<h1 class="Home-name">Nicole Chanlatte</h1>
+{# <h2 class="Home-tagline"><span class="Home-taglineLine"></span></h2> #}
 
 <main>
   <section class="Home-links">
     <div class="Home-linksGroup">
-      <h1 class="Home-heading"><span>Code</span></h1>
+      <h1 class="Home-heading"><span>Contact</span></h1>
       <ul class="Home-linkList">
         <li class="Home-linkItem">
-          <a href="https://github.com/mturco" class="Home-link Home-link--github">
-            <img inline src="svg/github.svg">
-            <span>GitHub</span>
+          <a href="http://www.linkedin.com/in/nchanlatte" class="Home-link Home-link--linkedin">
+            <img inline src="svg/linkedin.svg">
+            <span>LinkedIn</span>
           </a>
         </li>
         <li class="Home-linkItem">
-          <a href="https://bitbucket.org/mturco" class="Home-link Home-link--bitbucket">
-            <img inline src="svg/bitbucket.svg">
-            <span>Bitbucket</span>
+          <a href="mailto:nivazque@gmail.com" class="Home-link Home-link--email">
+            <img inline src="svg/email.svg">
+            <span>Email</span>
           </a>
         </li>
       </ul>
     </div>
 
     <div class="Home-linksGroup">
-      <h1 class="Home-heading"><span>Contact</span></h1>
+      <h1 class="Home-heading"><span>About</span></h1>
       <ul class="Home-linkList">
         <li class="Home-linkItem">
-          <a href="http://www.linkedin.com/in/mattturco" class="Home-link Home-link--linkedin">
-            <img inline src="svg/linkedin.svg">
-            <span>LinkedIn</span>
-          </a>
-        </li>
-        <li class="Home-linkItem">
-          <a href="mailto:matt.turco@gmail.com" class="Home-link Home-link--email">
-            <img inline src="svg/email.svg">
-            <span>Email</span>
+          <a href="resume.html" class="Home-link Home-link--resume">
+            <img inline src="svg/resume.svg">
+            <span>Resume</span>
           </a>
         </li>
       </ul>
@@ -54,42 +49,18 @@
       <h1 class="Home-heading"><span>Other</span></h1>
       <ul class="Home-linkList">
         <li class="Home-linkItem">
-          <a href="resume.html" class="Home-link Home-link--resume">
-            <img inline src="svg/resume.svg">
-            <span>Resume</span>
+          <a href="https://github.com/nchanlatte" class="Home-link Home-link--github">
+            <img inline src="svg/github.svg">
+            <span>GitHub</span>
           </a>
         </li>
         <li class="Home-linkItem">
-          <a href="photography.html" class="Home-link Home-link--photography">
-            <img inline src="svg/photography.svg">
-            <span>Photography</span>
+          <a href="travel.html" class="Home-link Home-link--github">
+            <img inline src="svg/globe.svg">
+            <span>Travel</span>
           </a>
         </li>
       </ul>
-    </div>
-  </section>
-
-  <section class="Home-projects">
-    <h1 class="Home-heading"><span>Projects</span></h1>
-    <div class="Home-project">
-      <h2 class="Home-projectName"><a href="https://react-news.mturco.com/" class="Home-projectLink">react-news</a> <a href="https://github.com/mturco/react-news" class="Home-projectSourceLink"><img inline src="svg/github.svg"></a></h2>
-      <p class="Home-projectDescription">A news reader written in React using NewsAPI.org</p>
-    </div>
-    <div class="Home-project">
-      <h2 class="Home-projectName"><a href="https://hacker-news-vue.mturco.com" class="Home-projectLink">hacker-news-vue</a> <a href="https://github.com/mturco/hacker-news-vue" class="Home-projectSourceLink"><img inline src="svg/github.svg"></a></h2>
-      <p class="Home-projectDescription">A Hacker News reader built with Vue.js</p>
-    </div>
-    <div class="Home-project">
-      <h2 class="Home-projectName"><a href="https://basket.mturco.com/" class="Home-projectLink">basket</a> <a href="https://github.com/mturco/basket" class="Home-projectSourceLink"><img inline src="svg/github.svg"></a></h2>
-      <p class="Home-projectDescription">A grocery list app written with React</p>
-    </div>
-    <div class="Home-project">
-      <h2 class="Home-projectName"><a href="https://mturco.github.io/context-menu/" class="Home-projectLink">context-menu</a> <a href="https://github.com/mturco/context-menu" class="Home-projectSourceLink"><img inline src="svg/github.svg"></a></h2>
-      <p class="Home-projectDescription">A small JavaScript library for adding context menus to any HTML element</p>
-    </div>
-    <div class="Home-project">
-      <h2 class="Home-projectName"><a href="https://github.com/mturco/mturco.com" class="Home-projectLink">mturco.com</a> <a href="https://github.com/mturco/mturco.com" class="Home-projectSourceLink"><img inline src="svg/github.svg"></a></h2>
-      <p class="Home-projectDescription">Source for this website</p>
     </div>
   </section>
 </main>
