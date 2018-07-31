@@ -16,7 +16,7 @@ const uglify = require('gulp-uglify');
 const nunjucksRender = require('gulp-nunjucks-render');
 const inline = require('gulp-inline-source');
 
-const BUILD = 'docs';
+const BUILD = './';
 
 gulp.task('clean', () => del.sync([`${BUILD}/**`, `!${BUILD}`]));
 
@@ -63,7 +63,7 @@ gulp.task('html', () => {
 });
 
 
-gulp.task('default', cb => runSequence('clean', ['css', 'js', 'copy-static'], 'html', cb));
+gulp.task('default', cb => runSequence(['css', 'js', 'copy-static'], 'html', cb));
 
 gulp.task('watch', () => {
   gulp.watch('styles/**', () => runSequence('css', 'html'));
