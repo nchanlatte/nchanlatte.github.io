@@ -6,7 +6,7 @@
     "start": "npm-run-all -p watch server",
     "build": "gulp",
     "watch": "gulp watch",
-    "server": "live-server docs"
+    "server": "live-server"
   },
   "author": "",
   "license": "ISC",
