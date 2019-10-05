@@ -1,0 +1,91 @@
+body {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  min-height: 100vh;
+  font: normal 16px sans-serif;
+}
+
+.navbar-brand {
+    position: relative;
+    background: url(./images/logo.png);
+    width: 80px;
+    left: 15px;
+    background-size: contain;
+}
+
+.navbar-brand img {
+  width: 100%;
+}
+
+.navbar-nav {
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-family: Handlee, Roboto, Arial, Helvetica, sans-serif;
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #D3D3D3;
+}
+
+.navbar h1{
+  color: #D3D3D3;
+  font-family: Handlee, Roboto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+}
+
+.gallery-container p.page-description {
+  text-align: center;
+  margin: 30px auto;
+  font-size: 18px;
+  color: #85878c;
+}
+
+.tz-gallery {
+  padding: 40px;
+}
+
+.tz-gallery .thumbnail {
+  padding: 0;
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  transition: 0.15s ease-in-out;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+}
+
+.tz-gallery .thumbnail:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.tz-gallery .lightbox img {
+  border-radius: 4px 4px 1 1;
+}
+
+.tz-gallery .caption {
+  padding: 26px 30px;
+  text-align: center;
+}
+
+.tz-gallery .caption h3 {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.tz-gallery .caption p {
+  font-size: 12px;
+  color: #7b7d7d;
+  margin: 0;
+}
+
+.baguetteBox-button {
+  background-color: transparent !important;
+}
