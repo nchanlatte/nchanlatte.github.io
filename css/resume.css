@@ -1,3 +1,7 @@
-.canva-embed iframe {
+.canva-embed {
+  padding: 129.4118% 5px 5px 5px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
   max-width: 8.5in;
+  margin: 0 auto;
 }
