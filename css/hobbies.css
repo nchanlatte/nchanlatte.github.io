@@ -107,14 +107,16 @@ main {
 section {
   padding: 1rem;
   margin: 0 0 2rem 0;
+  text-align: center;
+  letter-spacing: 0.03em;
+  justify-content: center;
+  overflow: hidden;
 }
+
 section h1 {
   color: #475257;
   font-family: Handlee, Roboto, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
   padding: 0 1rem;
 }
 section h1 span {
@@ -131,9 +133,13 @@ section h1 span:after,
 section h1 span:before {
   position: absolute;
   top: 50%;
-  width: 100vw;
+  width: 4rem;
   content: "";
   border-top: 1px solid #e2e7e9;
+}
+#subtitle {
+  color: #475257;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 footer {
   grid-column: 1 / 3;

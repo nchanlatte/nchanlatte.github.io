@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/hobbies.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Handlee:300,400,700"
     />
+    <link rel="stylesheet" href="./css/latte.css" />
   </head>
 
   <body>
     <header>
       <h1><span>Hobbies</span></h1>
     </header>
-
     <nav>
       <button id="menu-toggle">
         <svg viewBox="0 0 24 24">
@@ -33,25 +36,145 @@
     <main>
       <section id="section-1">
         <h1><span>Wandering Latte</span></h1>
-        <p>Striving to visit all major continents by the age of 30.</p>
+        <p id="subtitle">
+          Striving to visit all major continents by the age of 30.
+        </p>
+        <div class="container">
+          <div class="card">
+            <div class="face face1">
+              <div class="content">
+                <img src="./images/japan.jpg" alt="Japan" />
+                <h3>Hiroshima</h3>
+              </div>
+            </div>
+            <div class="face face2">
+              <div class="content">
+                <p>
+                  In 2017 I went to Japan with a group of friends. We stopped in
+                  Tokyo, Hiroshima and Kyoto, staying in cozy hostels and biking
+                  around. Every momement of the trip was breathtaking. I would
+                  return without a doubt to Japan especially Hiroshima.
+                </p>
+                <a href="#">Japan</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="face face1">
+              <div class="content">
+                <img src="./images/taj.jpg" alt="India" />
+                <h3>Agra</h3>
+              </div>
+            </div>
+            <div class="face face2">
+              <div class="content">
+                <p>
+                  I spent a month in northeast India teaching English at a
+                  sister Jesuit School. That experience continusly reminds and
+                  inspires me to give back to the community, stay educated, and
+                  never take what I have for granted.
+                </p>
+                <a href="#">India</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="face face1">
+              <div class="content">
+                <img src="./images/barc.jpg" alt="Barcelona" />
+                <h3>Barcelona</h3>
+              </div>
+            </div>
+            <div class="face face2">
+              <div class="content">
+                <p>
+                  I fell in love with Barcelona's food, culture and
+                  architecture. I am still in shock at how much time it has
+                  taken to build and fund La Sagrada Familia church. This
+                  colorful and vibrant city has left an unforgettable
+                  impression.
+                </p>
+                <a href="#">Spain</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+      <!-------------------------- 
+      ---------------------------
+        ---------------------------
+        Moving to Section 2
+      ----------------------------
+      ----------------------------
+      ---------------------------->
+
       <section id="section-2">
         <h1><span>Event Planning</span></h1>
-        <p>
+        <p id="subtitle">
           Pintest has changed the world of DIY and nurtured my creative event
           planning skills.
         </p>
+        <div class="container">
+          <div class="card">
+            <div class="face face1">
+              <div class="content">
+                <img src="./images/Cocktails & Costumes.jpg" alt="Halloween" />
+                <h3>Halloween</h3>
+              </div>
+            </div>
+            <div class="face face2">
+              <div class="content">
+                <p>
+                  TBD
+                </p>
+                <a href="#">Halloween</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="face face1">
+              <div class="content">
+                <img src="./images/BOP.jpg" alt="BOP" />
+                <h3>Volunteer Events</h3>
+              </div>
+            </div>
+            <div class="face face2">
+              <div class="content">
+                <p>
+                  TBD
+                </p>
+                <a href="#">Billion Oyster Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="face face1">
+              <div class="content">
+                <img src="./images/barc.jpg" alt="Barcelona" />
+                <h3>Women's Groups</h3>
+              </div>
+            </div>
+            <div class="face face2">
+              <div class="content">
+                <p>
+                  TBD
+                </p>
+                <a href="#">SWG</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <section id="section-3">
         <h1><span>Video Editing</span></h1>
-        <p>
+        <p id="subtitle">
           Reminiscing on past events though still photos, old videos and classic
           hits.
         </p>
       </section>
       <section id="section-4">
         <h1><span>Continuing Education</span></h1>
-        <p>
+        <p id="subtitle">
           Without trying to break the bank, I enjoy taking as many online or
           in-person courses learn more about what I dont know
         </p>
@@ -63,5 +186,6 @@
     </footer>
 
     <script src="./js/hobbies.js"></script>
+    <script async src="https://sdk.canva.com/v1/embed.js"></script>
   </body>
 </html>
