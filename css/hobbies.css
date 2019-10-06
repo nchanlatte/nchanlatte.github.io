@@ -1,0 +1,142 @@
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  font-family: system-ui, Handlee, Roboto, Arial, Helvetica, sans-serif;
+
+  /* this breaks position sticky in Firefox */
+  /* overflow-x: hidden; */
+}
+header {
+  grid-column: 2 / 3;
+  background: white;
+  color: #966f96;
+  text-align: center;
+  letter-spacing: 0.03em;
+  display: flex;
+  justify-content: center;
+}
+header h1 {
+  font: 3em Handlee, Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  overflow: hidden;
+  padding: 0 4rem;
+}
+header h1 span {
+  position: relative;
+  padding: 0 10px;
+}
+header h1 span:before {
+  right: 100%;
+}
+header h1 span:after {
+  left: 100%;
+}
+header h1 span:after,
+header h1 span:before {
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  content: "";
+  border-top: 1px solid #e2e7e9;
+}
+
+#menu-toggle {
+  color: #5d5c68;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  margin: 1rem;
+  border-radius: 50%;
+  padding: 0.25rem;
+}
+#menu-toggle:hover {
+  color: #6bd6b6;
+}
+#menu-toggle:focus {
+  outline: 0;
+  box-shadow: 0 0 5px #6bd6b6;
+}
+#menu-toggle svg {
+  width: 2rem;
+  height: 2rem;
+  display: block;
+}
+nav {
+  grid-row: 1 / 3;
+  white-space: nowrap;
+  background: white;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Only stick if you can fit */
+@media (min-height: 300px) {
+  nav ul {
+    position: sticky;
+    top: 0;
+  }
+}
+nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 18px;
+  color: #475257;
+  text-decoration: none;
+  font-family: Handlee, Roboto, Arial, Helvetica, sans-serif;
+  border-radius: 30px;
+}
+nav ul li a.current {
+  background: #f6f8f9;
+  color: #6bd6b6;
+  font-family: Handlee, Roboto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  border-radius: 30px;
+  /* border: 1px solid #e2e7e9; */
+}
+main {
+  padding-bottom: 40rem;
+}
+section {
+  padding: 1rem;
+  margin: 0 0 2rem 0;
+}
+section h1 {
+  color: #475257;
+  font-family: Handlee, Roboto, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem;
+}
+section h1 span {
+  position: relative;
+  padding: 0 10px;
+}
+section h1 span:before {
+  right: 100%;
+}
+section h1 span:after {
+  left: 100%;
+}
+section h1 span:after,
+section h1 span:before {
+  position: absolute;
+  top: 50%;
+  width: 100vw;
+  content: "";
+  border-top: 1px solid #e2e7e9;
+}
+footer {
+  grid-column: 1 / 3;
+  background: #e2e7e9;
+  padding: 5rem 1rem;
+}
