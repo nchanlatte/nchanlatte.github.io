@@ -5,18 +5,10 @@
 .section-header {
   text-align: center;
   margin: 60px auto 20px auto;
-
   font-size: 48px;
   font-weight: 700;
   text-transform: uppercase;
   color: #222;
-}
-
-.section-header-underline {
-  border: 1px solid #222;
-  width: 3rem;
-  margin: 0 auto;
-  margin-bottom: 30px;
 }
 
 .video-gallery {

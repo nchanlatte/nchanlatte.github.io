@@ -34,15 +34,3 @@ const nav = document.querySelector("nav ul");
 document.querySelector("#menu-toggle").addEventListener("click", () => {
   nav.style.visibility = nav.style.visibility === "" ? "hidden" : "";
 });
-
-// video gallery
-
-$(document).ready(function() {
-  $(".video-gallery").magnificPopup({
-    delegate: "a",
-    type: "iframe",
-    gallery: {
-      enabled: true
-    }
-  });
-});
