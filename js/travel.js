@@ -1,21 +1,98 @@
-// travel gallery
+$(document).ready(function() {
+  var data = {
+    gallery: [
+      {
+        title: "Japan",
+        img: (src = "./images/japan.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "India",
+        img: (src = "./images/taj.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Spain",
+        img: (src = "./images/barc.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Italy",
+        img: (src = "./images/rome.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "NYC",
+        img: (src = "./images/nyc.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Korea",
+        img: (src = "./images/korea.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Iceland",
+        img: (src = "./images/IMG_20190913_192053.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "San Francisco",
+        img: (src = "./images/IMG_20190913_172934.jpg"),
+        alt: "lorem"
+      }
+      // {
+      //   title: "Belgium",
+      //   img: (src = "./images/belgium.jpg"),
+      //   alt: "lorem"
+      // }
+    ]
+  };
 
-var angle = 0;
-function galleryspin(sign) {
-  spinner = document.querySelector("#spinner");
-  if (!sign) {
-    angle = angle + 45;
-  } else {
-    angle = angle - 45;
-  }
-  spinner.setAttribute(
-    "style",
-    "-webkit-transform: rotateY(" +
-      angle +
-      "deg); -moz-transform: rotateY(" +
-      angle +
-      "deg); transform: rotateY(" +
-      angle +
-      "deg);"
-  );
-}
+  var source = $("#template").html();
+  var template = Handlebars.compile(source);
+  $("#content").html(template(data));
+});
+
+$(window).load(function() {
+  var $items = $(".item");
+  $items.on({
+    mousemove: function(e) {
+      var $that = $(this);
+      $that.find(".overflow > img").velocity(
+        {
+          translateZ: 0,
+          translateX: Math.floor(
+            e.pageX - $that.offset().left - $that.width() / 2
+          ),
+          translateY: Math.floor(
+            e.pageY - $that.offset().top - $that.height() / 2
+          ),
+          scale: "2"
+        },
+        {
+          duration: 400,
+          easing: "linear",
+          queue: false
+        }
+      );
+    },
+    mouseleave: function() {
+      $(this)
+        .find(".overflow > img")
+        .velocity(
+          {
+            translateZ: 0,
+            translateX: 0,
+            translateY: 0,
+            scale: "1"
+          },
+          {
+            duration: 1000,
+            easing: "easeOutSine",
+            queue: false
+          }
+        );
+    }
+  });
+});

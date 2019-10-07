@@ -21,7 +21,7 @@ header {
   justify-content: center;
 }
 header h1 {
-  font: 3em Handlee, Roboto, Arial, Helvetica, sans-serif;
+  font: 5em Handlee, Roboto, Arial, Helvetica, sans-serif;
   font-weight: 300;
   overflow: hidden;
   padding: 0 4rem;
@@ -105,7 +105,7 @@ main {
   padding-bottom: 40rem;
 }
 section {
-  padding: 1rem;
+  padding: 2rem;
   margin: 0 0 2rem 0;
   text-align: center;
   letter-spacing: 0.03em;
@@ -115,7 +115,7 @@ section {
 
 section h1 {
   color: #475257;
-  font-family: Handlee, Roboto, Arial, Helvetica, sans-serif;
+  font: 2em Handlee, Roboto, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   padding: 0 1rem;
 }

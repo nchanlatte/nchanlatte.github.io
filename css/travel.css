@@ -1,76 +1,88 @@
-base#load {
-  bottom: 5%;
-  position: relative;
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:700);
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
 }
-div#carousel {
-  perspective: 1000px;
-  background: #f6f8f9;
-  /* padding: 3rem; */
-  /* margin-bottom: 30%; */
-  overflow: hidden;
-  bottom: 20%;
-}
-/* base#load {
-} */
-figure {
-  display: block;
-  margin-block-start: 2em;
-  margin-block-end: 2em;
-  margin-inline-start: 40px;
-  margin-inline-end: 40px;
-}
-figure#spinner {
-  transform-style: preserve-3d;
-  height: 300px;
-  transform-origin: 50% 50% -500px;
-  transition: 2s;
-  color: #475257;
-}
-figure#spinner img {
-  width: 40%;
-  max-width: 425px;
-  position: absolute;
-  left: 30%;
-  transform-origin: 50% 50% -500px;
-  outline: 1px solid transparent;
-}
-figure#spinner img:nth-child(1) {
-  transform: rotateY(0deg);
-}
-figure#spinner img:nth-child(2) {
-  transform: rotateY(-45deg);
-}
-figure#spinner img:nth-child(3) {
-  transform: rotateY(-90deg);
-}
-figure#spinner img:nth-child(4) {
-  transform: rotateY(-135deg);
-}
-figure#spinner img:nth-child(5) {
-  transform: rotateY(-180deg);
-}
-figure#spinner img:nth-child(6) {
-  transform: rotateY(-225deg);
-}
-figure#spinner img:nth-child(7) {
-  transform: rotateY(-270deg);
-}
-figure#spinner img:nth-child(8) {
-  transform: rotateY(-315deg);
-}
-div#carousel ~ span#ss-icon {
-  color: #475257;
-  margin: 5%;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 3rem;
-  transition: 0.6s color;
-  position: relative;
-  margin-top: -12rem;
-  border-bottom: none;
-  line-height: 0;
-}
-div#carousel ~ span#ss-icon:hover {
-  color: #475257;
+
+.item {
   cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  flex: 0 0 100%;
 }
+
+@media (min-width: 640px) {
+  .item {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .item {
+    flex-basis: 33.333333%;
+  }
+}
+
+.item:hover > .overflow > .content-art {
+  -webkit-transform: translateY(0) translateZ(0);
+  transform: translateY(0) translateZ(0);
+}
+
+.overflow {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.content-art {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  color: #fff;
+  font-weight: 700 !important;
+  text-align: center;
+  text-shadow: 0 1px 1px #000;
+  padding: 10px 15px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 100;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateY(100%) translateZ(0);
+  transform: translateY(100%) translateZ(0);
+  transition: -webkit-transform 450ms ease-out;
+  transition: transform 450ms ease-out;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+/* html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  background: #1f253d;
+  font-family: "Ubuntu", sans-serif;
+} */
