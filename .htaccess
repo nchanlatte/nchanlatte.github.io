@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "restricted area"
-AuthUserFile /home/nicolechanlatte/html/protect-me-dir/.htpasswd
+AuthUserFile https://nchanlatte.github.io/hobbies/html/protect-me-dir/.htpasswd
 require valid-user
