@@ -38,7 +38,7 @@ $(document).ready(function() {
       },
       {
         title: "San Francisco",
-        img: (src = "./images/IMG_20190913_172934.jpg"),
+        img: (src = "./images/IMG_20190326_171658.jpg"),
         alt: "lorem"
       }
       // {
