@@ -75,6 +75,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  line-height: 5;
 }
 
 /* Only stick if you can fit */

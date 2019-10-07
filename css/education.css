@@ -48,7 +48,8 @@
 }
 
 .container .card .face.face1 .content img {
-  max-width: 140px;
+  max-width: 190px;
+  border-radius: 8px;
 }
 
 .container .card .face.face1 .content h3 {
@@ -91,6 +92,6 @@
 }
 
 .container .card .face.face2 .content a:hover {
-  background: #5d5c68;
+  background: #e2e7e9;
   color: #f6f8f9;
 }
