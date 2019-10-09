@@ -32,8 +32,13 @@ $(document).ready(function() {
         alt: "lorem"
       },
       {
-        title: "Iceland",
-        img: (src = "./images/IMG_20190913_192053.jpg"),
+        title: "Montouk",
+        img: (src = "./images/montok.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Miami",
+        img: (src = "./images/miami.jpg"),
         alt: "lorem"
       },
       {
@@ -47,13 +52,8 @@ $(document).ready(function() {
         alt: "lorem"
       },
       {
-        title: "Miami",
-        img: (src = "./images/miami.jpg"),
-        alt: "lorem"
-      },
-      {
-        title: "Montok",
-        img: (src = "./images/montok.jpg"),
+        title: "Iceland",
+        img: (src = "./images/IMG_20190913_192053.jpg"),
         alt: "lorem"
       }
     ]
