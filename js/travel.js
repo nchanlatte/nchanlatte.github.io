@@ -38,14 +38,24 @@ $(document).ready(function() {
       },
       {
         title: "San Francisco",
-        img: (src = "./images/IMG_20190326_171658.jpg"),
+        img: (src = "./images/IMG_20190324_104238.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Belgium",
+        img: (src = "./images/belgium.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Miami",
+        img: (src = "./images/miami.jpg"),
+        alt: "lorem"
+      },
+      {
+        title: "Montok",
+        img: (src = "./images/montok.jpg"),
         alt: "lorem"
       }
-      // {
-      //   title: "Belgium",
-      //   img: (src = "./images/belgium.jpg"),
-      //   alt: "lorem"
-      // }
     ]
   };
 
